@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqjiqmix0onot"]
 
 [ext_resource type="Script" uid="uid://b8g60y5r7wwrn" path="res://explosion.gd" id="1_vxas0"]
-[ext_resource type="Texture2D" uid="uid://2ho5ay3omlcb" path="res://sun.png" id="2_j4sxf"]
+[ext_resource type="Texture2D" uid="uid://bq8lvgbx2fp20" path="res://nukeeffect.png" id="2_vxas0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0656j"]
 radius = 119.507324
@@ -12,8 +12,9 @@ radius = 119.507324
 script = ExtResource("1_vxas0")
 
 [node name="Sun" type="Sprite2D" parent="explosion" unique_id=2021785617]
-position = Vector2(-1, -7)
-texture = ExtResource("2_j4sxf")
+position = Vector2(29.999998, -3.9999998)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vxas0")
 
 [node name="Area2D" type="Area2D" parent="explosion" unique_id=2135839612]
 

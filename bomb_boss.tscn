@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://d1rg6rnji8pl"]
 
 [ext_resource type="Script" uid="uid://c6hhjw3he0uli" path="res://bomb_boss.gd" id="1_5n2i3"]
-[ext_resource type="Texture2D" uid="uid://ci17yd4bdlp7x" path="res://bomb.png" id="2_1m3ij"]
+[ext_resource type="Texture2D" uid="uid://bc7eqtn6m3h78" path="res://nuke.png" id="2_5n2i3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0656j"]
-radius = 130.38405
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gjbm"]
+radius = 105.0
+height = 372.0
 
 [node name="bombBOSS" type="Node2D" unique_id=862832932]
 
@@ -13,12 +14,12 @@ script = ExtResource("1_5n2i3")
 
 [node name="Bomb" type="Sprite2D" parent="bombBOSS" unique_id=512908224]
 position = Vector2(2, -2)
-texture = ExtResource("2_1m3ij")
+texture = ExtResource("2_5n2i3")
 
 [node name="Area2D" type="Area2D" parent="bombBOSS" unique_id=1435050885]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bombBOSS/Area2D" unique_id=165065276]
-position = Vector2(8, 49)
-shape = SubResource("CircleShape2D_0656j")
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_8gjbm")
 
 [connection signal="body_entered" from="bombBOSS/Area2D" to="bombBOSS" method="_on_area_2d_body_entered"]

@@ -35,7 +35,6 @@
 [ext_resource type="Script" uid="uid://bj7f4mxtsgavr" path="res://area_2_dlift.gd" id="38_sq52s"]
 [ext_resource type="Script" uid="uid://7u5a124am2eb" path="res://lift_2.gd" id="39_4om0j"]
 [ext_resource type="Script" uid="uid://7sgkhf4ly36l" path="res://node_2d.gd" id="40_3cb3m"]
-[ext_resource type="Texture2D" uid="uid://db2owyfjbde4x" path="res://builds/pre-alpha-builds/final-pre-alpha-builds/castle.png" id="40_txo4c"]
 [ext_resource type="Script" uid="uid://dtkgcfbwa3ra2" path="res://thornes_2_lvl.gd" id="41_4om0j"]
 [ext_resource type="Texture2D" uid="uid://dhdxscw7rr3gt" path="res://thornsotz.png" id="42_3cb3m"]
 [ext_resource type="Script" uid="uid://gi54gpuw4xya" path="res://lift_14.gd" id="43_72jbv"]
@@ -802,7 +801,8 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("17_5lby0")
 
 [node name="Sprite2D" type="Sprite2D" parent="cat2" unique_id=1622401004]
-position = Vector2(-51.428917, -164.2857)
+position = Vector2(-72.85749, -77.142845)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("18_c6n81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cat2" unique_id=1011735110]
@@ -837,7 +837,8 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("17_5lby0")
 
 [node name="Sprite2D" type="Sprite2D" parent="catborders/cat2" unique_id=1821678903]
-position = Vector2(-47.14425, -139.99998)
+position = Vector2(-82.858536, -58.57141)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("18_c6n81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="catborders/cat2" unique_id=1173103646]
@@ -872,7 +873,8 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("17_5lby0")
 
 [node name="Sprite2D" type="Sprite2D" parent="catborders/catborders/cat2" unique_id=1715983386]
-position = Vector2(-59.999996, -148.57143)
+position = Vector2(-82.85714, -68.57143)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("18_c6n81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="catborders/catborders/cat2" unique_id=618597371]
@@ -1528,7 +1530,6 @@ script = ExtResource("43_wo1hx")
 [node name="Castle" type="Sprite2D" parent="castle" unique_id=368808375]
 position = Vector2(17047.5, 578.5)
 scale = Vector2(3.7773466, 3.2304688)
-texture = ExtResource("40_txo4c")
 
 [node name="Area2D" type="Area2D" parent="castle" unique_id=321901604]
 

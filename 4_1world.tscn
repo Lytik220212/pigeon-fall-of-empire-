@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://b33jtfkospunk" path="res://coins.gd" id="4_fo5u2"]
 [ext_resource type="Script" uid="uid://dffh6nlserplx" path="res://fps.gd" id="5_mpeks"]
 [ext_resource type="Script" uid="uid://lx8dd1jtkdrq" path="res://label.gd" id="6_658f6"]
-[ext_resource type="Texture2D" uid="uid://beb4r2635sb7i" path="res://cat.png" id="7_1nk0h"]
 [ext_resource type="Script" uid="uid://bhfd3qh4jovxw" path="res://cat_boss.gd" id="7_s25am"]
-[ext_resource type="Texture2D" uid="uid://brkmy8ctih5xb" path="res://rounded-thornes.png" id="9_s25am"]
+[ext_resource type="Texture2D" uid="uid://mjw5fio2ayk" path="res://catOTZ.png" id="9_8gjbm"]
 [ext_resource type="Texture2D" uid="uid://dn0b14p32w6u0" path="res://Star-Recovered-Recovered-export.png" id="10_8gjbm"]
+[ext_resource type="Texture2D" uid="uid://dn2jecsmp7i8q" path="res://gun.png" id="10_fo5u2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_maw8n"]
 radius = 117.01709
@@ -24,7 +24,7 @@ size = Vector2(161.5146, 20)
 size = Vector2(49.5, 109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0656j"]
-size = Vector2(895.5, 697)
+size = Vector2(895.5, 1085)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vp888"]
 size = Vector2(2332, 20)
@@ -42,49 +42,12 @@ visibility_layer = 7
 position = Vector2(133, 558)
 script = ExtResource("2_s25am")
 
-[node name="bossHP" type="Node2D" parent="player" unique_id=643470233]
-position = Vector2(-338, -558)
-
-[node name="StarRecoveredRecoveredExport" type="Sprite2D" parent="player/bossHP" unique_id=862490094]
-position = Vector2(323, 443)
-scale = Vector2(0.340625, 0.340625)
-texture = ExtResource("10_8gjbm")
-
-[node name="StarRecoveredRecoveredExport2" type="Sprite2D" parent="player/bossHP" unique_id=1323173062]
-position = Vector2(439, 443)
-scale = Vector2(0.340625, 0.340625)
-texture = ExtResource("10_8gjbm")
-
-[node name="StarRecoveredRecoveredExport3" type="Sprite2D" parent="player/bossHP" unique_id=1455049736]
-position = Vector2(561, 443)
-scale = Vector2(0.340625, 0.340625)
-texture = ExtResource("10_8gjbm")
-
-[node name="StarRecoveredRecoveredExport4" type="Sprite2D" parent="player/bossHP" unique_id=1011039171]
-position = Vector2(685.00006, 443)
-scale = Vector2(0.340625, 0.340625)
-texture = ExtResource("10_8gjbm")
-
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=324272973]
 light_mask = 7
 visibility_layer = 7
 position = Vector2(159, 377)
 scale = Vector2(0.652, 0.62200004)
 texture = ExtResource("3_8gjbm")
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=185794594]
-light_mask = 7
-visibility_layer = 7
-position = Vector2(122, 366)
-
-[node name="coins" type="Label" parent="player/Camera2D" unique_id=604030288]
-offset_left = -944.0
-offset_top = -233.0
-offset_right = -768.0
-offset_bottom = -164.0
-theme_override_font_sizes/font_size = 50
-text = "BREAD:"
-script = ExtResource("4_fo5u2")
 
 [node name="Area2Dplayer" type="Area2D" parent="player" unique_id=1176323774]
 light_mask = 7
@@ -140,16 +103,17 @@ position = Vector2(-384, 5)
 script = ExtResource("7_s25am")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CatBOSS" unique_id=1057103179]
-position = Vector2(1651, 589)
+position = Vector2(1847, 695)
 scale = Vector2(2, 2)
-texture = ExtResource("7_1nk0h")
+texture = ExtResource("9_8gjbm")
 
 [node name="gun" type="Sprite2D" parent="CatBOSS" unique_id=1019098333]
-position = Vector2(1417, 928.0002)
-texture = ExtResource("9_s25am")
+position = Vector2(1400, 949)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("10_fo5u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatBOSS" unique_id=70583979]
-position = Vector2(1665.25, 735.5)
+position = Vector2(1665.25, 541.5)
 shape = SubResource("RectangleShape2D_0656j")
 
 [node name="bombBOSSspawn" type="Node2D" parent="." unique_id=1078932748]
@@ -167,7 +131,7 @@ position = Vector2(531, 409)
 [node name="borders" type="StaticBody2D" parent="." unique_id=945685789]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=848656974]
-position = Vector2(967, 0)
+position = Vector2(950, 363)
 shape = SubResource("RectangleShape2D_vp888")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=1615198560]
@@ -197,5 +161,42 @@ position = Vector2(88, 926)
 
 [node name="portalSpawn" type="Node2D" parent="." unique_id=898700091]
 position = Vector2(940, 1067)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=185794594]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(733, 795)
+
+[node name="coins" type="Label" parent="Camera2D" unique_id=604030288]
+offset_left = -944.0
+offset_top = -233.0
+offset_right = -768.0
+offset_bottom = -164.0
+theme_override_font_sizes/font_size = 50
+text = "BREAD:"
+script = ExtResource("4_fo5u2")
+
+[node name="bossHP" type="Node2D" parent="Camera2D" unique_id=1171495037]
+position = Vector2(-642, -828)
+
+[node name="StarRecoveredRecoveredExport" type="Sprite2D" parent="Camera2D/bossHP" unique_id=1962951320]
+position = Vector2(323, 443)
+scale = Vector2(0.340625, 0.340625)
+texture = ExtResource("10_8gjbm")
+
+[node name="StarRecoveredRecoveredExport2" type="Sprite2D" parent="Camera2D/bossHP" unique_id=165222896]
+position = Vector2(439, 443)
+scale = Vector2(0.340625, 0.340625)
+texture = ExtResource("10_8gjbm")
+
+[node name="StarRecoveredRecoveredExport3" type="Sprite2D" parent="Camera2D/bossHP" unique_id=168368266]
+position = Vector2(561, 443)
+scale = Vector2(0.340625, 0.340625)
+texture = ExtResource("10_8gjbm")
+
+[node name="StarRecoveredRecoveredExport4" type="Sprite2D" parent="Camera2D/bossHP" unique_id=2111169983]
+position = Vector2(685.00006, 443)
+scale = Vector2(0.340625, 0.340625)
+texture = ExtResource("10_8gjbm")
 
 [connection signal="body_entered" from="player/Area2Dplayer" to="player" method="_on_area_2_dplayer_body_entered"]

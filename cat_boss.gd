@@ -49,13 +49,13 @@ func shoot():
 		Global.canBeatCatBoss = false
 		shoot()
 	if(Global.bossCatHP == 2):
-		$"../player/bossHP/StarRecoveredRecoveredExport4".hide()
+		$"../Camera2D/bossHP/StarRecoveredRecoveredExport4".hide()
 	if(Global.bossCatHP == 1):
-		$"../player/bossHP/StarRecoveredRecoveredExport3".hide()
+		$"../Camera2D/bossHP/StarRecoveredRecoveredExport3".hide()
 	if(Global.bossCatHP == 0):
-		$"../player/bossHP/StarRecoveredRecoveredExport2".hide()
+		$"../Camera2D/bossHP/StarRecoveredRecoveredExport2".hide()
 	if(Global.bossCatHP == -1):
-		$"../player/bossHP/StarRecoveredRecoveredExport".hide()
+		$"../Camera2D/bossHP/StarRecoveredRecoveredExport".hide()
 		dead = true
 	if dead == true:
 		queue_free()
