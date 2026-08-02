@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://bmx2pbspi8515"]
+
+[ext_resource type="Script" uid="uid://brtnpd7jtqylp" path="res://player.gd" id="1_q6x6p"]
+[ext_resource type="Texture2D" uid="uid://dudh341w8udop" path="res://bird.png" id="2_10fap"]
+[ext_resource type="Script" uid="uid://qonw4y6yma7l" path="res://hp.gd" id="3_41tq5"]
+[ext_resource type="Texture2D" uid="uid://bkccm6gsoy1fp" path="res://heart.png" id="4_xc0pt"]
+[ext_resource type="Script" uid="uid://dffh6nlserplx" path="res://fps.gd" id="5_secgl"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="6_10fap"]
+[ext_resource type="Texture2D" uid="uid://ystj6rgdlbov" path="res://grass.png" id="7_41tq5"]
+[ext_resource type="Texture2D" uid="uid://b1nap04bgbsg7" path="res://small_grass.png" id="7_mn2gc"]
+[ext_resource type="Texture2D" uid="uid://d27k30uj40qs0" path="res://grassotz.png" id="8_01rqg"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="10_bum67"]
+[ext_resource type="Texture2D" uid="uid://d1wmp8xp64d2b" path="res://land.png" id="11_ru2ak"]
+[ext_resource type="Texture2D" uid="uid://dhdxscw7rr3gt" path="res://thornsotz.png" id="12_01rqg"]
+[ext_resource type="Script" uid="uid://cttec6pdch6t1" path="res://rounded_thornes.gd" id="14_bum67"]
+[ext_resource type="Script" uid="uid://dtkgcfbwa3ra2" path="res://thornes_2_lvl.gd" id="15_bum67"]
+[ext_resource type="Texture2D" uid="uid://brkmy8ctih5xb" path="res://rounded-thornes.png" id="15_ru2ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kkig"]
+size = Vector2(1163, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j544e"]
+size = Vector2(10, 646)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxu1b"]
+radius = 103.00485
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mn2gc"]
+radius = 104.04326
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru2ak"]
+size = Vector2(188.32184, 337.64783)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2ik"]
+size = Vector2(209.65523, 172.65117)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ma2ik"]
+radius = 173.04623
+
+[node name="2levelof1world" type="Node2D" unique_id=939431877]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1550076536]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1957865356]
+position = Vector2(577, 640)
+shape = SubResource("RectangleShape2D_2kkig")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1666146029]
+position = Vector2(-5, 313)
+shape = SubResource("RectangleShape2D_j544e")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=332776209]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-20, 97)
+script = ExtResource("1_q6x6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=334029971]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(146.00002, 403)
+scale = Vector2(0.53, 0.50200003)
+texture = ExtResource("2_10fap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1099166817]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(173, 425)
+shape = SubResource("CircleShape2D_fxu1b")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1586893218]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(122, 366)
+
+[node name="HP" type="Node2D" parent="player/Camera2D" unique_id=1137472614]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-597, -323)
+script = ExtResource("3_41tq5")
+
+[node name="1hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=1280415183]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(116.999985, 65)
+scale = Vector2(0.5425, 0.58825004)
+texture = ExtResource("4_xc0pt")
+
+[node name="2hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=1295657659]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(257, 65)
+scale = Vector2(0.554, 0.588)
+texture = ExtResource("4_xc0pt")
+
+[node name="3hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=134546629]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(407, 65.99999)
+scale = Vector2(0.673, 0.588)
+texture = ExtResource("4_xc0pt")
+
+[node name="coins" type="Label" parent="player/Camera2D" unique_id=295533412]
+light_mask = 7
+visibility_layer = 7
+offset_left = -546.0
+offset_top = -196.00002
+offset_right = -422.0331
+offset_bottom = -142.66669
+scale = Vector2(2.5894008, 3)
+theme_override_font_sizes/font_size = 25
+text = "BREAD :"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2Dplayer" type="Area2D" parent="player" unique_id=528328448]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2Dplayer" unique_id=330196302]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(171, 414)
+shape = SubResource("CircleShape2D_mn2gc")
+
+[node name="FPS" type="Label" parent="player" unique_id=2081164705]
+offset_left = -417.0
+offset_top = 266.0
+offset_right = -366.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 30
+text = "FPS"
+script = ExtResource("5_secgl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=742514386]
+show_behind_parent = true
+position = Vector2(568, 172)
+scale = Vector2(17.622223, 14.706667)
+texture = ExtResource("6_10fap")
+
+[node name="SmallGrass" type="Sprite2D" parent="." unique_id=1869388167]
+position = Vector2(510, 565)
+texture = ExtResource("7_mn2gc")
+
+[node name="Grassotz" type="Sprite2D" parent="." unique_id=445777700]
+position = Vector2(124, 599)
+texture = ExtResource("8_01rqg")
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=1507128083]
+position = Vector2(-133, 599)
+texture = ExtResource("7_41tq5")
+
+[node name="SmallGrass2" type="Sprite2D" parent="." unique_id=1674990529]
+position = Vector2(-316, 608)
+scale = Vector2(0.36328125, 0.3828125)
+texture = ExtResource("7_mn2gc")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=674444120]
+position = Vector2(-449, 509)
+texture = ExtResource("10_bum67")
+
+[node name="Land" type="Sprite2D" parent="." unique_id=503469741]
+position = Vector2(-350, 696)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land" unique_id=262411743]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land" unique_id=1725729040]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land" unique_id=1622159749]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land" unique_id=2027613072]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land" unique_id=1524725148]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land" unique_id=553597818]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land" unique_id=58928087]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land" unique_id=298929180]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=28464597]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=1599867565]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=1350919755]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=1000959568]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=1091677479]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=1168112963]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Land" type="Sprite2D" parent="Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land/Land" unique_id=1186779562]
+position = Vector2(254, 0)
+texture = ExtResource("11_ru2ak")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=698439639]
+position = Vector2(1493, 487)
+scale = Vector2(0.8, 0.8)
+
+[node name="thornes2lvl" type="StaticBody2D" parent="." unique_id=253271116]
+position = Vector2(918, 264.5)
+scale = Vector2(1.3593749, 1.1757813)
+script = ExtResource("15_bum67")
+
+[node name="Thornsotz" type="Sprite2D" parent="thornes2lvl" unique_id=1329370455]
+texture = ExtResource("12_01rqg")
+
+[node name="Land2" type="Sprite2D" parent="thornes2lvl" unique_id=1672151507]
+position = Vector2(8.827576, -185.83388)
+scale = Vector2(0.73563224, 0.8504983)
+texture = ExtResource("11_ru2ak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thornes2lvl" unique_id=1774690859]
+position = Vector2(7.3563232, -73.14285)
+shape = SubResource("RectangleShape2D_ru2ak")
+
+[node name="Area2DThornes2lvl" type="Area2D" parent="thornes2lvl" unique_id=259839405]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thornes2lvl/Area2DThornes2lvl" unique_id=342973432]
+position = Vector2(6.2528076, 17.860474)
+shape = SubResource("RectangleShape2D_ma2ik")
+
+[node name="rounded-thornes" type="StaticBody2D" parent="." unique_id=410118048]
+script = ExtResource("14_bum67")
+
+[node name="Sprite2D" type="Sprite2D" parent="rounded-thornes" unique_id=542019770]
+position = Vector2(1486, 439)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("15_ru2ak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rounded-thornes" unique_id=1381433816]
+position = Vector2(1481, 445)
+shape = SubResource("CircleShape2D_ma2ik")
+
+[connection signal="body_entered" from="player/Area2Dplayer" to="player/Camera2D/HP" method="_on_area_2_dplayer_body_entered"]

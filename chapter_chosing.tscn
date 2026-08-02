@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cuf3c2yfmcx3k"]
+
+[ext_resource type="Script" uid="uid://b0yvfko5lhbfq" path="res://frstchapterchisoing.gd" id="1_mkrg4"]
+[ext_resource type="Texture2D" uid="uid://xrq8gfe74khw" path="res://island.png" id="1_nxjcy"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="2_mkrg4"]
+[ext_resource type="Texture2D" uid="uid://dexyxfpbd3otf" path="res://small_grass2.png" id="3_g8nse"]
+[ext_resource type="Texture2D" uid="uid://d27k30uj40qs0" path="res://grassotz.png" id="4_krylq"]
+[ext_resource type="Texture2D" uid="uid://b8ysmy1xunpu7" path="res://bread.png" id="5_eo7t5"]
+[ext_resource type="Texture2D" uid="uid://dn0b14p32w6u0" path="res://Star-Recovered-Recovered-export.png" id="6_1ecv1"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="8_g8nse"]
+
+[node name="chapter_chosing" type="Node2D" unique_id=733933621]
+
+[node name="frstchapterchisoing" type="Button" parent="." unique_id=426801122]
+offset_left = 719.0
+offset_top = 730.0
+offset_right = 1113.0
+offset_bottom = 838.0
+theme_override_font_sizes/font_size = 50
+text = "FIRST CHAPTER"
+script = ExtResource("1_mkrg4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1243065305]
+position = Vector2(973, 531)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727797174]
+position = Vector2(978, 604)
+scale = Vector2(0.5220001, 0.556)
+texture = ExtResource("1_nxjcy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1752998519]
+position = Vector2(979, 462)
+texture = ExtResource("2_mkrg4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1267240413]
+position = Vector2(703, 228)
+
+[node name="SmallGrass2" type="Sprite2D" parent="." unique_id=1025280190]
+position = Vector2(889, 706)
+scale = Vector2(0.13593408, 0.13373365)
+texture = ExtResource("3_g8nse")
+
+[node name="Grassotz" type="Sprite2D" parent="." unique_id=801982599]
+position = Vector2(792, 710)
+scale = Vector2(0.578125, 0.68359375)
+texture = ExtResource("4_krylq")
+
+[node name="Bread" type="Sprite2D" parent="." unique_id=704304978]
+position = Vector2(943, 555)
+rotation = 0.52423066
+scale = Vector2(0.17800002, 0.182)
+texture = ExtResource("5_eo7t5")
+
+[node name="StarRecoveredRecoveredExport" type="Sprite2D" parent="." unique_id=1173701725]
+position = Vector2(802, 538)
+rotation = -0.58417535
+scale = Vector2(0.316994, 0.34812984)
+texture = ExtResource("6_1ecv1")
+
+[node name="Bgforforest" type="Sprite2D" parent="." unique_id=1078003705]
+show_behind_parent = true
+position = Vector2(802.5557, 373.12445)
+scale = Vector2(10.888889, 6.751111)
+texture = ExtResource("8_g8nse")
+
+[connection signal="button_down" from="frstchapterchisoing" to="frstchapterchisoing" method="_on_button_down"]

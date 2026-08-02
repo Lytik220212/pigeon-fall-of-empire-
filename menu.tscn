@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://ds6n3l4puohop"]
+
+[ext_resource type="Script" uid="uid://1x87m32cl2d4" path="res://menu.gd" id="1_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://bustyodjxkk2g" path="res://bg.jpg" id="1_mae5d"]
+[ext_resource type="Script" uid="uid://nqrntydxt6nk" path="res://button_1.gd" id="2_h1wq0"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="2_oil5j"]
+[ext_resource type="Script" uid="uid://ca2v32075yut" path="res://button_2.gd" id="3_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://dudh341w8udop" path="res://bird.png" id="4_4hy44"]
+[ext_resource type="Script" uid="uid://bkqak53opfej7" path="res://global.gd" id="5_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://cah6jhyr3l1ri" path="res://lytik.jpg" id="8_iqepy"]
+[ext_resource type="Texture2D" uid="uid://7cew7mgalxpo" path="res://thorns.png" id="9_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://c5ljalrninc6v" path="res://time.png" id="10_4ndjb"]
+[ext_resource type="Script" uid="uid://8c26413vnior" path="res://button_4.gd" id="10_iqepy"]
+[ext_resource type="Texture2D" uid="uid://dn0b14p32w6u0" path="res://Star-Recovered-Recovered-export.png" id="13_g7jxm"]
+[ext_resource type="Script" uid="uid://cmf12uml4gcw3" path="res://server.gd" id="14_jspdm"]
+[ext_resource type="Script" uid="uid://bo77ddu6fnuxp" path="res://speedrun_going.gd" id="15_gd0jp"]
+[ext_resource type="Script" uid="uid://bu0x3nwnu7e3j" path="res://client.gd" id="15_oxnod"]
+[ext_resource type="Script" uid="uid://cy1b6whk04qgy" path="res://best_lap.gd" id="16_gd0jp"]
+[ext_resource type="Script" uid="uid://c3jnqmd5j3vsk" path="res://link_button.gd" id="19_w25hu"]
+[ext_resource type="Texture2D" uid="uid://cqmo34w0sd77n" path="res://telegram.png" id="20_td6mg"]
+[ext_resource type="Script" uid="uid://cxwvghauf70xw" path="res://lan_multiplayer_button.gd" id="21_td6mg"]
+[ext_resource type="Texture2D" uid="uid://b8bpdkej6nrhe" path="res://itch.png" id="22_guify"]
+[ext_resource type="Script" uid="uid://qesepdhuakan" path="res://settings_button.gd" id="23_oil5j"]
+
+[node name="Node2D" type="Node2D" unique_id=948157498]
+script = ExtResource("1_3ls4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=471231995]
+position = Vector2(526.09344, 290.20453)
+scale = Vector2(10.8133335, 6.5911107)
+texture = ExtResource("2_oil5j")
+
+[node name="Bird2" type="Sprite2D" parent="Sprite2D" unique_id=300029256]
+position = Vector2(-388.27765, -216.03006)
+rotation = 0.5209466
+scale = Vector2(0.576443, 0.57452387)
+skew = 0.0055402517
+texture = ExtResource("4_4hy44")
+
+[node name="global" type="Node2D" parent="Sprite2D" unique_id=451422653]
+position = Vector2(-552.41974, -315.22266)
+scale = Vector2(0.9598953, 0.9537749)
+script = ExtResource("5_ytr4m")
+
+[node name="credits" type="Sprite2D" parent="Sprite2D" unique_id=2068305321]
+visible = false
+modulate = Color(0.24104936, 0.24104936, 0.24104936, 1)
+position = Vector2(41.038383, 55.742527)
+scale = Vector2(0.22534794, 0.20871001)
+texture = ExtResource("1_mae5d")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=692177028]
+visible = false
+offset_left = -420.91406
+offset_top = -252.27351
+offset_right = 801.08594
+offset_bottom = 242.72649
+theme_override_font_sizes/font_size = 65
+text = "Lytik (Programmer, team lead,
+2D artist, owner)
+
+Thank you for help !"
+
+[node name="Lytik" type="Sprite2D" parent="Sprite2D" unique_id=472950536]
+visible = false
+position = Vector2(-477.5507, -211.17282)
+scale = Vector2(0.13918482, 0.13829736)
+texture = ExtResource("8_iqepy")
+
+[node name="Thorns" type="Sprite2D" parent="Sprite2D" unique_id=232633623]
+position = Vector2(398.8365, 130.19025)
+rotation = -0.38855332
+scale = Vector2(0.95900965, 0.95466554)
+skew = -0.0045058727
+texture = ExtResource("9_nrnbx")
+
+[node name="Button4" type="Button" parent="Sprite2D" unique_id=1789406019]
+visible = false
+offset_left = -512.1041
+offset_top = 191.23184
+offset_right = -399.10413
+offset_bottom = 286.23184
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 0.5019608)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+text = "BACK"
+script = ExtResource("10_iqepy")
+
+[node name="StarRecoveredRecoveredExport" type="Sprite2D" parent="Sprite2D" unique_id=678889126]
+position = Vector2(1170.0981, -268.44144)
+scale = Vector2(0.9598953, 0.9537749)
+texture = ExtResource("13_g7jxm")
+
+[node name="Time" type="Sprite2D" parent="Sprite2D" unique_id=1370846963]
+top_level = true
+position = Vector2(833, 208)
+scale = Vector2(1.8125, 1.84375)
+texture = ExtResource("10_4ndjb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=676238530]
+position = Vector2(574, 326)
+
+[node name="Button1" type="Button" parent="." unique_id=1262714664]
+offset_left = -780.0
+offset_top = 816.0
+offset_right = -507.0
+offset_bottom = 1031.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY
+NORMAL
+MODE"
+script = ExtResource("2_h1wq0")
+
+[node name="Button2" type="Button" parent="." unique_id=585493474]
+offset_left = 309.0
+offset_top = 493.0
+offset_right = 860.0
+offset_bottom = 679.2573
+theme_override_font_sizes/font_size = 80
+text = "QUIT"
+script = ExtResource("3_ytr4m")
+
+[node name="server" type="Button" parent="." unique_id=1921661777]
+visible = false
+offset_left = -468.0
+offset_top = 834.0
+offset_right = -402.0
+offset_bottom = 865.0
+text = "SERVER"
+script = ExtResource("14_jspdm")
+
+[node name="client" type="Button" parent="." unique_id=2074179373]
+visible = false
+offset_left = -366.0
+offset_top = 923.0
+offset_right = -303.0
+offset_bottom = 954.0
+text = "CLIENT"
+script = ExtResource("15_oxnod")
+
+[node name="SPEEDRUN_GOING" type="Button" parent="." unique_id=441411778]
+offset_left = 314.0
+offset_top = 32.0
+offset_right = 856.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY
+SPEEDRUN
+MODE"
+script = ExtResource("15_gd0jp")
+
+[node name="best_lap" type="Label" parent="." unique_id=388370376]
+offset_left = 308.0
+offset_top = -53.0
+offset_right = 556.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "BEST LAP :"
+script = ExtResource("16_gd0jp")
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=496779707]
+offset_left = -299.0
+offset_top = 589.0
+offset_right = -140.0
+offset_bottom = 754.0
+uri = "https://t.me/pigeonfallofempire"
+script = ExtResource("19_w25hu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="LinkButton" unique_id=362127667]
+position = Vector2(80, 84)
+scale = Vector2(0.67578125, 0.68359375)
+texture = ExtResource("20_td6mg")
+
+[node name="lan_multiplayer_button" type="Button" parent="." unique_id=656910704]
+offset_left = -989.0
+offset_top = 630.0
+offset_right = -435.0
+offset_bottom = 762.0
+theme_override_font_sizes/font_size = 50
+text = "LAN MULTIPLAYER"
+script = ExtResource("21_td6mg")
+
+[node name="LinkButton2" type="LinkButton" parent="." unique_id=490422138]
+offset_left = -305.0
+offset_top = 386.0
+offset_right = -146.0
+offset_bottom = 551.0
+uri = "https://t.me/pigeonfallofempire"
+script = ExtResource("19_w25hu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="LinkButton2" unique_id=206794185]
+position = Vector2(80.00002, 82.999985)
+scale = Vector2(0.29455727, 0.2951302)
+texture = ExtResource("22_guify")
+
+[node name="SETTINGS_BUTTON" type="Button" parent="." unique_id=237895217]
+offset_left = 316.0
+offset_top = 285.0
+offset_right = 848.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 90
+text = "SETTINGS"
+script = ExtResource("23_oil5j")
+
+[connection signal="button_down" from="Sprite2D/Button4" to="Sprite2D/Button4" method="_on_button_down"]
+[connection signal="button_down" from="Button1" to="Button1" method="_on_button_down"]
+[connection signal="button_down" from="Button2" to="Button2" method="_on_button_down"]
+[connection signal="button_down" from="server" to="server" method="_on_button_down"]
+[connection signal="button_down" from="client" to="client" method="_on_button_down"]
+[connection signal="button_down" from="SPEEDRUN_GOING" to="SPEEDRUN_GOING" method="_on_button_down"]
+[connection signal="button_down" from="LinkButton" to="LinkButton" method="_on_button_down"]
+[connection signal="button_down" from="lan_multiplayer_button" to="lan_multiplayer_button" method="_on_button_down"]
+[connection signal="button_down" from="LinkButton2" to="LinkButton2" method="_on_button_down"]
+[connection signal="button_down" from="SETTINGS_BUTTON" to="SETTINGS_BUTTON" method="_on_button_down"]

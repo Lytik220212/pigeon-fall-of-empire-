@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://qqb27xuq033t"]
+
+[ext_resource type="Script" uid="uid://1x87m32cl2d4" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="PackedScene" uid="uid://s3fd1gl01uel" path="res://player.tscn" id="2_36u2h"]
+[ext_resource type="Texture2D" uid="uid://156rjkky8ruu" path="res://godot-6138d84e.png" id="3_mae5d"]
+[ext_resource type="Texture2D" uid="uid://d1wmp8xp64d2b" path="res://land.png" id="4_cu3qv"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="5_xpvtb"]
+[ext_resource type="Texture2D" uid="uid://ystj6rgdlbov" path="res://grass.png" id="6_pbxh3"]
+[ext_resource type="Texture2D" uid="uid://d27k30uj40qs0" path="res://grassotz.png" id="7_ln606"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36u2h"]
+size = Vector2(658, 100)
+
+[node name="Node2D" type="Node2D" unique_id=229837599]
+script = ExtResource("1_lti8b")
+player = ExtResource("2_36u2h")
+
+[node name="Button" type="Button" parent="." unique_id=1841230069]
+offset_right = 133.0
+offset_bottom = 51.0
+text = "server"
+
+[node name="Button2" type="Button" parent="." unique_id=229804726]
+offset_left = -1.0
+offset_top = 65.0
+offset_right = 134.0
+offset_bottom = 110.0
+text = "client"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1161732926]
+_spawnable_scenes = PackedStringArray("uid://s3fd1gl01uel")
+spawn_path = NodePath("..")
+
+[node name="Godot6138d84e" type="Sprite2D" parent="." unique_id=396845141]
+position = Vector2(118.5, 433)
+scale = Vector2(0.5625, 0.505)
+texture = ExtResource("3_mae5d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1021669803]
+position = Vector2(-9, 585)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1401590918]
+position = Vector2(332, 277)
+shape = SubResource("RectangleShape2D_36u2h")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D" unique_id=952831464]
+position = Vector2(129, 293)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land" unique_id=1990854793]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land/Land" unique_id=1746865998]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land/Land/Land" unique_id=1027374565]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land" unique_id=1735892271]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land" unique_id=457435323]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land" unique_id=250999103]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land" unique_id=1559632361]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land2" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land" unique_id=725060094]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land2" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2" unique_id=627389821]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land2" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2/Land2" unique_id=325462654]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land2" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2/Land2/Land2" unique_id=1801451044]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Land2" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2/Land2/Land2/Land2" unique_id=1271520438]
+position = Vector2(254, 0)
+texture = ExtResource("4_cu3qv")
+
+[node name="Tree" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2/Land2/Land2/Land2" unique_id=1601948008]
+position = Vector2(81.999985, -302)
+scale = Vector2(1.67, 1.94)
+texture = ExtResource("5_xpvtb")
+
+[node name="Grass" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2/Land2/Land2/Land2" unique_id=2040334650]
+position = Vector2(-4297, -19)
+texture = ExtResource("6_pbxh3")
+
+[node name="Grassotz" type="Sprite2D" parent="StaticBody2D/Land/Land/Land/Land/Land/Land/Land/Land2/Land2/Land2/Land2" unique_id=1530513558]
+position = Vector2(-130, -95)
+texture = ExtResource("7_ln606")
+
+[node name="spawn" type="Node2D" parent="." unique_id=1975024509]
+position = Vector2(524, 578)
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

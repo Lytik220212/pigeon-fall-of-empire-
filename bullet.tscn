@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://xahl4k0i4mu8"]
+
+[ext_resource type="Script" uid="uid://c1htparrbp0k8" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://7cew7mgalxpo" path="res://thorns.png" id="2_t4vbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0656j"]
+size = Vector2(209.0511, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp888"]
+size = Vector2(20, 171)
+
+[node name="bullet" type="Node2D" unique_id=1561761451]
+
+[node name="bullet" type="CharacterBody2D" parent="." unique_id=1901776460]
+script = ExtResource("1_v8qja")
+
+[node name="Thorns" type="Sprite2D" parent="bullet" unique_id=584573004]
+position = Vector2(0, -3.0000076)
+rotation = -1.5704149
+texture = ExtResource("2_t4vbm")
+
+[node name="Area2D" type="Area2D" parent="bullet" unique_id=1950503035]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet/Area2D" unique_id=673547903]
+position = Vector2(17.000002, -46.000004)
+rotation = -0.43610218
+shape = SubResource("RectangleShape2D_0656j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bullet/Area2D" unique_id=1778751843]
+position = Vector2(20, 31.999996)
+rotation = 0.38019615
+shape = SubResource("RectangleShape2D_0656j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bullet/Area2D" unique_id=661061944]
+position = Vector2(104, -10.5)
+shape = SubResource("RectangleShape2D_vp888")
+
+[connection signal="body_entered" from="bullet/Area2D" to="bullet" method="_on_area_2d_body_entered"]

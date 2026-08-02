@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://boj2ckvjvuc6s"]
+
+[ext_resource type="Script" uid="uid://bbpxjx4mu513r" path="res://multiplayer_test_scene.gd" id="1_yre4h"]
+[ext_resource type="PackedScene" uid="uid://s3fd1gl01uel" path="res://player.tscn" id="2_tm2q5"]
+[ext_resource type="Texture2D" uid="uid://cburypiwe7nih" path="res://ground.png" id="3_2cm5b"]
+[ext_resource type="Script" uid="uid://r0eagcnfdis3" path="res://multiplayer_spawner.gd" id="3_q2vbi"]
+[ext_resource type="Texture2D" uid="uid://d1wmp8xp64d2b" path="res://land.png" id="5_d3lh4"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="6_axw76"]
+[ext_resource type="Texture2D" uid="uid://ystj6rgdlbov" path="res://grass.png" id="7_l15pb"]
+[ext_resource type="Texture2D" uid="uid://d27k30uj40qs0" path="res://grassotz.png" id="8_eiwci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm2q5"]
+size = Vector2(597, 42)
+
+[node name="multiplayer_test_scene" type="Node2D" unique_id=769017820]
+script = ExtResource("1_yre4h")
+player = ExtResource("2_tm2q5")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=675629749]
+_spawnable_scenes = PackedStringArray("uid://s3fd1gl01uel")
+spawn_path = NodePath("..")
+script = ExtResource("3_q2vbi")
+player = ExtResource("2_tm2q5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1002535739]
+position = Vector2(21, 657)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1177232820]
+position = Vector2(275.5, 441)
+shape = SubResource("RectangleShape2D_tm2q5")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=837999092]
+position = Vector2(278, 482)
+scale = Vector2(2.3515625, 1)
+texture = ExtResource("3_2cm5b")
+
+[node name="spawner" type="Node2D" parent="." unique_id=512201810]
+position = Vector2(39, -9)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2058732551]
+position = Vector2(819, 714)
+
+[node name="Land3" type="Sprite2D" parent="." unique_id=408336823]
+position = Vector2(755, 11)
+texture = ExtResource("5_d3lh4")
+
+[node name="Land2" type="Sprite2D" parent="Land3" unique_id=1688612323]
+position = Vector2(254, 0)
+texture = ExtResource("5_d3lh4")
+
+[node name="Land2" type="Sprite2D" parent="Land3/Land2" unique_id=733988179]
+position = Vector2(254, 0)
+texture = ExtResource("5_d3lh4")
+
+[node name="Tree" type="Sprite2D" parent="Land3/Land2" unique_id=1482460462]
+position = Vector2(-463.00006, 2595.0002)
+scale = Vector2(1.67, 1.94)
+texture = ExtResource("6_axw76")
+
+[node name="Grass" type="Sprite2D" parent="Land3/Land2" unique_id=1295625528]
+position = Vector2(-820, 1729)
+texture = ExtResource("7_l15pb")
+
+[node name="Grassotz" type="Sprite2D" parent="Land3/Land2" unique_id=700355756]
+position = Vector2(-452, 1912)
+texture = ExtResource("8_eiwci")
+
+[node name="Land3" type="Sprite2D" parent="Land3" unique_id=878923199]
+position = Vector2(755, 11)
+texture = ExtResource("5_d3lh4")
+
+[node name="Land2" type="Sprite2D" parent="Land3/Land3" unique_id=1999415810]
+position = Vector2(254, 0)
+texture = ExtResource("5_d3lh4")
+
+[node name="Land2" type="Sprite2D" parent="Land3/Land3/Land2" unique_id=1459539832]
+position = Vector2(254, 0)
+texture = ExtResource("5_d3lh4")
+
+[node name="Tree" type="Sprite2D" parent="Land3/Land3/Land2" unique_id=723579630]
+position = Vector2(-463.00006, 2595.0002)
+scale = Vector2(1.67, 1.94)
+texture = ExtResource("6_axw76")
+
+[node name="Grass" type="Sprite2D" parent="Land3/Land3/Land2" unique_id=1034245135]
+position = Vector2(-820, 1729)
+texture = ExtResource("7_l15pb")
+
+[node name="Grassotz" type="Sprite2D" parent="Land3/Land3/Land2" unique_id=1298235111]
+position = Vector2(-452, 1912)
+texture = ExtResource("8_eiwci")

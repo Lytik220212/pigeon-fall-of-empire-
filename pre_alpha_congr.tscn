@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ctl5ww2rt1pb0"]
+
+[ext_resource type="Script" uid="uid://lekxfr1y04iw" path="res://pre_alpha_congr.gd" id="1_4rjpf"]
+[ext_resource type="Script" uid="uid://di4h5s7m826v0" path="res://record.gd" id="2_n7plc"]
+[ext_resource type="Script" uid="uid://7n1p4ktdb048" path="res://go_from_pre_alph_to_menu_and_save.gd" id="3_wx31d"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="4_u3fni"]
+
+[node name="pre-alpha-congr" type="Node2D" unique_id=1889533786]
+script = ExtResource("1_4rjpf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=27040437]
+
+[node name="Label" type="Label" parent="." unique_id=1675503351]
+offset_left = -592.0
+offset_top = -105.0
+offset_right = 736.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 80
+text = "THANK YOU FOR PLAYING
+ PRE-ALPHA VERSION OF MY GAME"
+
+[node name="record" type="Label" parent="." unique_id=1812868827]
+offset_left = -550.0
+offset_top = 179.0
+offset_right = 37.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "NEW RECORD : "
+script = ExtResource("2_n7plc")
+
+[node name="go_from_pre_alph-to-menu-and-save" type="Button" parent="." unique_id=321232189]
+offset_left = -217.0
+offset_top = 309.0
+offset_right = 216.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 50
+text = "MENU"
+script = ExtResource("3_wx31d")
+
+[node name="Bgforforest" type="Sprite2D" parent="." unique_id=147621586]
+show_behind_parent = true
+position = Vector2(154.6134, 144.24445)
+scale = Vector2(10.773334, 6.5111113)
+texture = ExtResource("4_u3fni")
+
+[connection signal="button_down" from="go_from_pre_alph-to-menu-and-save" to="go_from_pre_alph-to-menu-and-save" method="_on_button_down"]

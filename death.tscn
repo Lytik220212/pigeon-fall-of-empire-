@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bpjgova75b28o"]
+
+[ext_resource type="Script" uid="uid://bgbub8wgc67y4" path="res://button_reborn.gd" id="1_qemge"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="2_lf77f"]
+[ext_resource type="Script" uid="uid://bd3gpjy06bh2b" path="res://going_menu.gd" id="3_531me"]
+
+[node name="death" type="Node2D" unique_id=746324235]
+
+[node name="Label" type="Label" parent="." unique_id=768926421]
+offset_left = 359.0
+offset_top = 156.0
+offset_right = 1764.0
+offset_bottom = 407.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+text = "DEATH"
+
+[node name="ButtonREBORN" type="Button" parent="." unique_id=64032594]
+offset_left = 201.0
+offset_top = 295.0
+offset_right = 881.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 90
+text = "Reborn"
+script = ExtResource("1_qemge")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1359555673]
+position = Vector2(574, 323)
+
+[node name="Bgforforest" type="Sprite2D" parent="." unique_id=773794840]
+show_behind_parent = true
+position = Vector2(643.03564, 258.16446)
+scale = Vector2(10.928889, 7.671111)
+texture = ExtResource("2_lf77f")
+
+[node name="going_menu" type="Button" parent="." unique_id=830130952]
+offset_left = 200.0
+offset_top = 484.0
+offset_right = 887.0
+offset_bottom = 697.0
+theme_override_font_sizes/font_size = 80
+text = "MENU"
+script = ExtResource("3_531me")
+
+[connection signal="button_down" from="ButtonREBORN" to="ButtonREBORN" method="_on_button_down"]
+[connection signal="button_down" from="going_menu" to="going_menu" method="_on_button_down"]

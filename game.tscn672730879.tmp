@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bcsxkevmk0omn"]
+
+[ext_resource type="Texture2D" uid="uid://bustyodjxkk2g" path="res://bg.jpg" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://brtnpd7jtqylp" path="res://player.gd" id="2_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dudh341w8udop" path="res://bird.png" id="3_7jktm"]
+[ext_resource type="Texture2D" uid="uid://dm3c7picvbx0j" path="res://cloud.png" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://b8ysmy1xunpu7" path="res://bread.png" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://dyjqkjx8pue4l" path="res://bread.gd" id="5_ryrav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(9474.397, 3237.1543)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eow3j"]
+radius = 108.00463
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ryrav"]
+radius = 123.101585
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(283, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(241, 99)
+
+[node name="Node2D" type="Node2D" unique_id=1315981071]
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1609399917]
+position = Vector2(1046.25, 38.999977)
+scale = Vector2(0.39799997, 0.34628573)
+texture = ExtResource("1_feb5d")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1967226852]
+
+[node name="floor" type="Sprite2D" parent="floor" unique_id=1629729075]
+visible = false
+position = Vector2(575.00006, 592.75)
+scale = Vector2(0.22133332, 0.03614286)
+texture = ExtResource("1_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=2137944468]
+position = Vector2(1050.5, 590.5)
+scale = Vector2(0.22133332, 0.03614286)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1479059844]
+script = ExtResource("2_fc0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1734591009]
+position = Vector2(140.00002, 435)
+scale = Vector2(0.17844036, 0.23466666)
+texture = ExtResource("3_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=260192166]
+position = Vector2(158, 434)
+shape = SubResource("CircleShape2D_eow3j")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1808652560]
+position = Vector2(580, 321)
+
+[node name="coins" type="Label" parent="player" unique_id=1877917143]
+offset_left = 28.0
+offset_top = 13.0
+offset_right = 154.0
+offset_bottom = 71.0
+scale = Vector2(2.5894008, 3)
+text = "BREAD :"
+
+[node name="Area2D" type="Area2D" parent="player" unique_id=492522517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D" unique_id=1080921177]
+position = Vector2(156, 434)
+shape = SubResource("CircleShape2D_ryrav")
+
+[node name="cloud" type="CharacterBody2D" parent="." unique_id=1435701191]
+position = Vector2(604, 236)
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud" unique_id=1274671420]
+texture = ExtResource("4_fc0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cloud" unique_id=2135232791]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="cloud" type="CharacterBody2D" parent="cloud" unique_id=749119453]
+position = Vector2(362, -143)
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud/cloud" unique_id=1117355409]
+texture = ExtResource("4_fc0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cloud/cloud" unique_id=1711875615]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="bread" type="StaticBody2D" parent="." unique_id=1499332727]
+position = Vector2(-21, -61)
+script = ExtResource("5_ryrav")
+
+[node name="Sprite2D" type="Sprite2D" parent="bread" unique_id=1616682921]
+position = Vector2(993.99994, -9)
+scale = Vector2(0.30039057, 0.30195314)
+texture = ExtResource("5_7jktm")
+
+[node name="Area2D" type="Area2D" parent="bread" unique_id=636288644]
+position = Vector2(-14, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bread/Area2D" unique_id=1195004207]
+position = Vector2(980.5, 22.5)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[connection signal="body_entered" from="bread/Area2D" to="bread" method="_on_area_2d_body_entered"]

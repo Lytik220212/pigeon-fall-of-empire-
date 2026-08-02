@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://s3fd1gl01uel"]
+
+[ext_resource type="Script" uid="uid://brtnpd7jtqylp" path="res://player.gd" id="1_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://b6fb6dv6du1u" path="res://pigeon-remodelotz.png" id="2_dw050"]
+[ext_resource type="Script" uid="uid://qonw4y6yma7l" path="res://hp.gd" id="3_b26j0"]
+[ext_resource type="Texture2D" uid="uid://bkccm6gsoy1fp" path="res://heart.png" id="4_n7ghd"]
+[ext_resource type="Script" uid="uid://b33jtfkospunk" path="res://coins.gd" id="5_nvl01"]
+[ext_resource type="Script" uid="uid://dffh6nlserplx" path="res://fps.gd" id="6_ivps1"]
+[ext_resource type="Script" uid="uid://lx8dd1jtkdrq" path="res://label.gd" id="7_urp6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwjto"]
+radius = 83.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_606se"]
+radius = 88.09086
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1jxqw"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="player" type="Node2D" unique_id=1583739600]
+position = Vector2(-257, -1030)
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1729080475]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(86, 340)
+script = ExtResource("1_1jxqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=143238644]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(170.00002, 433)
+scale = Vector2(0.7825001, 0.7714999)
+texture = ExtResource("2_dw050")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=363033894]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(173, 425)
+shape = SubResource("CircleShape2D_bwjto")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1364678663]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(122, 366)
+
+[node name="HP" type="Node2D" parent="player/Camera2D" unique_id=1507988854]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-988, -535)
+script = ExtResource("3_b26j0")
+
+[node name="1hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=2103593788]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(116.999985, 65)
+scale = Vector2(0.5425, 0.58825004)
+texture = ExtResource("4_n7ghd")
+
+[node name="2hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=349035390]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(257, 65)
+scale = Vector2(0.554, 0.588)
+texture = ExtResource("4_n7ghd")
+
+[node name="3hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=1284973905]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(407, 65.99999)
+scale = Vector2(0.673, 0.588)
+texture = ExtResource("4_n7ghd")
+
+[node name="coins" type="Label" parent="player/Camera2D" unique_id=510888241]
+offset_left = -931.0
+offset_top = -377.0
+offset_right = -755.0
+offset_bottom = -308.0
+theme_override_font_sizes/font_size = 50
+text = "BREAD:"
+script = ExtResource("5_nvl01")
+
+[node name="Area2Dplayer" type="Area2D" parent="player" unique_id=383262857]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2Dplayer" unique_id=829705569]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(173, 425)
+shape = SubResource("CircleShape2D_606se")
+
+[node name="FPS" type="Label" parent="player" unique_id=817025277]
+offset_left = -811.0
+offset_top = 84.0
+offset_right = -760.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 30
+text = "FPS"
+script = ExtResource("6_ivps1")
+
+[node name="star" type="Label" parent="player" unique_id=1373396542]
+offset_left = -809.0
+offset_top = 32.0
+offset_right = -676.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 45
+text = "STAR: "
+
+[node name="timer" type="Label" parent="player" unique_id=1378996833]
+offset_left = 61.0
+offset_top = -155.0
+offset_right = 132.0
+offset_bottom = -86.0
+theme_override_font_sizes/font_size = 50
+text = "0.0"
+script = ExtResource("7_urp6f")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="player" unique_id=1240201796]
+replication_config = SubResource("SceneReplicationConfig_1jxqw")
+
+[connection signal="body_entered" from="player/Area2Dplayer" to="player/Camera2D/HP" method="_on_area_2_dplayer_body_entered"]

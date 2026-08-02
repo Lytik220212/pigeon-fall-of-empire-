@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://ds72w4740my5d"]
+
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="1_mhf44"]
+[ext_resource type="Texture2D" uid="uid://xrq8gfe74khw" path="res://island.png" id="2_ue012"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="3_7whm5"]
+[ext_resource type="Texture2D" uid="uid://dexyxfpbd3otf" path="res://small_grass2.png" id="4_ilm5r"]
+[ext_resource type="Texture2D" uid="uid://d27k30uj40qs0" path="res://grassotz.png" id="5_8dahb"]
+[ext_resource type="Texture2D" uid="uid://b8ysmy1xunpu7" path="res://bread.png" id="6_8hptl"]
+[ext_resource type="Texture2D" uid="uid://dn0b14p32w6u0" path="res://Star-Recovered-Recovered-export.png" id="7_ehcxk"]
+[ext_resource type="Script" uid="uid://c3sxb0dqinjg4" path="res://normal.gd" id="8_ilm5r"]
+[ext_resource type="Script" uid="uid://cb0ts88uqhpi2" path="res://speedrun.gd" id="9_8dahb"]
+[ext_resource type="Texture2D" uid="uid://c5ljalrninc6v" path="res://time.png" id="10_8hptl"]
+
+[node name="chosing_mode" type="Node2D" unique_id=691454919]
+
+[node name="Bgforforest" type="Sprite2D" parent="." unique_id=163702960]
+position = Vector2(1116.0178, 634.34674)
+scale = Vector2(15.964444, 9.306666)
+texture = ExtResource("1_mhf44")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1930768145]
+position = Vector2(952, 535)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678662491]
+position = Vector2(455, 585)
+scale = Vector2(0.5220001, 0.556)
+texture = ExtResource("2_ue012")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=751681019]
+position = Vector2(456, 443)
+texture = ExtResource("3_7whm5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1381675513]
+position = Vector2(180, 209)
+
+[node name="SmallGrass2" type="Sprite2D" parent="." unique_id=475062118]
+position = Vector2(366, 687)
+scale = Vector2(0.13593408, 0.13373365)
+texture = ExtResource("4_ilm5r")
+
+[node name="Grassotz" type="Sprite2D" parent="." unique_id=896599208]
+position = Vector2(269, 691)
+scale = Vector2(0.578125, 0.68359375)
+texture = ExtResource("5_8dahb")
+
+[node name="Bread" type="Sprite2D" parent="." unique_id=1332654866]
+position = Vector2(420, 536)
+rotation = 0.52423066
+scale = Vector2(0.17800002, 0.182)
+texture = ExtResource("6_8hptl")
+
+[node name="StarRecoveredRecoveredExport" type="Sprite2D" parent="." unique_id=2096198447]
+position = Vector2(279, 519)
+rotation = -0.58417535
+scale = Vector2(0.316994, 0.34812984)
+texture = ExtResource("7_ehcxk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1297173700]
+position = Vector2(1445, 581)
+scale = Vector2(0.5220001, 0.556)
+texture = ExtResource("2_ue012")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1018310304]
+position = Vector2(1446, 439)
+texture = ExtResource("3_7whm5")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=112944186]
+position = Vector2(1170, 205)
+
+[node name="SmallGrass3" type="Sprite2D" parent="." unique_id=557491167]
+position = Vector2(1356, 683)
+scale = Vector2(0.13593408, 0.13373365)
+texture = ExtResource("4_ilm5r")
+
+[node name="Grassotz2" type="Sprite2D" parent="." unique_id=1517691723]
+position = Vector2(1259, 687)
+scale = Vector2(0.578125, 0.68359375)
+texture = ExtResource("5_8dahb")
+
+[node name="Bread2" type="Sprite2D" parent="." unique_id=1638565480]
+position = Vector2(1410, 532)
+rotation = 0.52423066
+scale = Vector2(0.17800002, 0.182)
+texture = ExtResource("6_8hptl")
+
+[node name="StarRecoveredRecoveredExport2" type="Sprite2D" parent="." unique_id=122574985]
+position = Vector2(1269, 515)
+rotation = -0.58417535
+scale = Vector2(0.316994, 0.34812984)
+texture = ExtResource("7_ehcxk")
+
+[node name="normal" type="Button" parent="." unique_id=374485518]
+offset_left = 193.0
+offset_top = 711.0
+offset_right = 692.0
+offset_bottom = 939.0
+theme_override_font_sizes/font_size = 60
+text = "Normal"
+script = ExtResource("8_ilm5r")
+
+[node name="speedrun" type="Button" parent="." unique_id=532815933]
+offset_left = 1184.0
+offset_top = 708.0
+offset_right = 1711.0
+offset_bottom = 948.0
+theme_override_font_sizes/font_size = 60
+text = "SPEEDRUN"
+script = ExtResource("9_8dahb")
+
+[node name="Time" type="Sprite2D" parent="." unique_id=1468826483]
+position = Vector2(1616, 614)
+scale = Vector2(7.15625, 7.125)
+texture = ExtResource("10_8hptl")
+
+[connection signal="button_down" from="normal" to="normal" method="_on_button_down"]
+[connection signal="button_down" from="speedrun" to="speedrun" method="_on_button_down"]

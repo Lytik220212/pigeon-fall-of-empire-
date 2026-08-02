@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b3eiltfpsvcfh"]
+
+[ext_resource type="Script" uid="uid://deftvtb4x004g" path="res://settings.gd" id="1_x2hje"]
+[ext_resource type="Script" uid="uid://24f0qkaj2bv1" path="res://from_setting_to_menu.gd" id="2_nkug2"]
+[ext_resource type="Script" uid="uid://dehhhg1ucmqry" path="res://delete_saves_btn.gd" id="3_3ykye"]
+
+[node name="settings" type="Node2D" unique_id=1040178673]
+script = ExtResource("1_x2hje")
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=1309733319]
+offset_left = 6.0
+offset_top = 112.0
+offset_right = 173.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="CheckBox2" type="CheckBox" parent="." unique_id=1846823398]
+offset_left = 13.0
+offset_top = 42.0
+offset_right = 126.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 50
+text = "FPS"
+
+[node name="from-setting-to-menu" type="Button" parent="." unique_id=1683083971]
+offset_left = 23.0
+offset_top = 951.0
+offset_right = 131.0
+offset_bottom = 1055.0
+theme_override_font_sizes/font_size = 40
+text = "exit"
+script = ExtResource("2_nkug2")
+
+[node name="delete_saves_btn" type="Button" parent="." unique_id=1078455939]
+offset_left = 258.0
+offset_top = 547.0
+offset_right = 1609.0
+offset_bottom = 828.0
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+text = "DELETE SAVES"
+script = ExtResource("3_3ykye")
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="button_down" from="from-setting-to-menu" to="from-setting-to-menu" method="_on_button_down"]
+[connection signal="button_down" from="delete_saves_btn" to="delete_saves_btn" method="_on_button_down"]

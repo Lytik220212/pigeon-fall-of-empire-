@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://clac806y5jaw5"]
+
+[ext_resource type="Texture2D" uid="uid://8033ik78bhhe" path="res://bgforest.jpg" id="1_0r4pt"]
+[ext_resource type="Script" uid="uid://friwtmlu6v03" path="res://button_next_3_1.gd" id="2_3x7kx"]
+
+[node name="Node2D" type="Node2D" unique_id=1919633554]
+
+[node name="Bgforest" type="Sprite2D" parent="." unique_id=1668262720]
+position = Vector2(968.6305, 541.63226)
+scale = Vector2(1.7647362, 1.7560248)
+texture = ExtResource("1_0r4pt")
+
+[node name="Button-next-3-1" type="Button" parent="Bgforest" unique_id=2086041313]
+offset_left = -211.40149
+offset_top = -49.702484
+offset_right = 245.59851
+offset_bottom = 102.297516
+theme_override_font_sizes/font_size = 100
+text = "3-1 world"
+script = ExtResource("2_3x7kx")
+
+[node name="Label" type="Label" parent="Bgforest" unique_id=592937245]
+offset_left = -374.05463
+offset_top = -265.8002
+offset_right = 418.94537
+offset_bottom = 53.1998
+theme_override_font_sizes/font_size = 100
+text = "GOOD WORK !
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=237690849]
+position = Vector2(973, 539)
+
+[connection signal="button_down" from="Bgforest/Button-next-3-1" to="Bgforest/Button-next-3-1" method="_on_button_down"]

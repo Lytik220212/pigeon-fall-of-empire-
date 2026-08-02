@@ -1,0 +1,800 @@
+[gd_scene format=3 uid="uid://bcsxkevmk0omn"]
+
+[ext_resource type="Texture2D" uid="uid://bustyodjxkk2g" path="res://bg.jpg" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://brtnpd7jtqylp" path="res://player.gd" id="2_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dudh341w8udop" path="res://bird.png" id="3_7jktm"]
+[ext_resource type="Texture2D" uid="uid://b8ysmy1xunpu7" path="res://bread.png" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://dyjqkjx8pue4l" path="res://bread.gd" id="5_ryrav"]
+[ext_resource type="Texture2D" uid="uid://xrq8gfe74khw" path="res://island.png" id="6_lc2xo"]
+[ext_resource type="Script" uid="uid://qonw4y6yma7l" path="res://hp.gd" id="7_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://bkccm6gsoy1fp" path="res://heart.png" id="8_vef74"]
+[ext_resource type="Texture2D" uid="uid://ci17yd4bdlp7x" path="res://bomb.png" id="9_vef74"]
+[ext_resource type="Script" uid="uid://1k11ycst8gpt" path="res://bomb.gd" id="10_e36ub"]
+[ext_resource type="Texture2D" uid="uid://dq4v3qlmxw7pk" path="res://wall.jpg" id="10_hve3p"]
+[ext_resource type="Script" uid="uid://1saxmsslys3w" path="res://thorns.gd" id="11_iotsf"]
+[ext_resource type="Texture2D" uid="uid://dhdxscw7rr3gt" path="res://thornsotz.png" id="11_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://d1wmp8xp64d2b" path="res://land.png" id="13_215e1"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="14_e8heu"]
+[ext_resource type="Texture2D" uid="uid://b1nap04bgbsg7" path="res://small_grass.png" id="15_rvswv"]
+[ext_resource type="Texture2D" uid="uid://dexyxfpbd3otf" path="res://small_grass2.png" id="16_boyg6"]
+[ext_resource type="Texture2D" uid="uid://ystj6rgdlbov" path="res://grass.png" id="17_e36ub"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="18_rvswv"]
+[ext_resource type="Script" uid="uid://dffh6nlserplx" path="res://fps.gd" id="19_boyg6"]
+[ext_resource type="Texture2D" uid="uid://7cew7mgalxpo" path="res://thorns.png" id="21_hb5m1"]
+[ext_resource type="Script" uid="uid://ui0xn7ynxgwn" path="res://new_damage_system_test.gd" id="22_x5p1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(9474.397, 3237.1543)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eow3j"]
+radius = 103.00485
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ryrav"]
+radius = 104.04326
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(283, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(172.17188, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(17, 1113)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hve3p"]
+radius = 55.03635
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfdv2"]
+radius = 75.00667
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
+size = Vector2(2160, 1159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(1002, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
+size = Vector2(1015, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvswv"]
+size = Vector2(504, 297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boyg6"]
+size = Vector2(55, 266)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e36ub"]
+radius = 137.00365
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5p1p"]
+size = Vector2(391, 251)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb5m1"]
+size = Vector2(384, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhcbd"]
+size = Vector2(172, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1jbl"]
+size = Vector2(203, 189.5)
+
+[node name="Node2D" type="Node2D" unique_id=1315981071]
+light_mask = 7
+visibility_layer = 7
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1967226852]
+light_mask = 7
+visibility_layer = 7
+
+[node name="floor" type="Sprite2D" parent="floor" unique_id=1629729075]
+visible = false
+light_mask = 7
+visibility_layer = 7
+position = Vector2(575.00006, 592.75)
+scale = Vector2(0.22133332, 0.03614286)
+texture = ExtResource("1_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=2137944468]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1050.5, 590.5)
+scale = Vector2(0.22133332, 0.03614286)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1479059844]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-1, 16)
+script = ExtResource("2_fc0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1734591009]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(146.00002, 403)
+scale = Vector2(0.53, 0.50200003)
+texture = ExtResource("3_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=260192166]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(173, 425)
+shape = SubResource("CircleShape2D_eow3j")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1808652560]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(122, 366)
+
+[node name="HP" type="Node2D" parent="player/Camera2D" unique_id=581985724]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-597, -323)
+script = ExtResource("7_j5wjh")
+
+[node name="1hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=1998589049]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(116.999985, 65)
+scale = Vector2(0.5425, 0.58825004)
+texture = ExtResource("8_vef74")
+
+[node name="2hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=926531854]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(257, 65)
+scale = Vector2(0.554, 0.588)
+texture = ExtResource("8_vef74")
+
+[node name="3hp" type="Sprite2D" parent="player/Camera2D/HP" unique_id=1318526286]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(407, 65.99999)
+scale = Vector2(0.673, 0.588)
+texture = ExtResource("8_vef74")
+
+[node name="coins" type="Label" parent="player/Camera2D" unique_id=1877917143]
+light_mask = 7
+visibility_layer = 7
+offset_left = -546.0
+offset_top = -196.00002
+offset_right = -422.0331
+offset_bottom = -142.66669
+scale = Vector2(2.5894008, 3)
+theme_override_font_sizes/font_size = 25
+text = "BREAD :"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2Dplayer" type="Area2D" parent="player" unique_id=492522517]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2Dplayer" unique_id=1080921177]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(171, 414)
+shape = SubResource("CircleShape2D_ryrav")
+
+[node name="FPS" type="Label" parent="player" unique_id=842537795]
+offset_left = -417.0
+offset_top = 266.0
+offset_right = -366.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 30
+text = "FPS"
+script = ExtResource("19_boyg6")
+
+[node name="cloud" type="CharacterBody2D" parent="." unique_id=1435701191]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(603, 283)
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud" unique_id=1274671420]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-8.000034, -50.499977)
+scale = Vector2(0.71999997, 0.74600005)
+texture = ExtResource("6_lc2xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cloud" unique_id=2135232791]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2, -6.5)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="cloud" type="CharacterBody2D" parent="cloud" unique_id=749119453]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(362, -143)
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud/cloud" unique_id=1117355409]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-9.500056, -34.000004)
+scale = Vector2(0.72599995, 0.696)
+texture = ExtResource("6_lc2xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cloud/cloud" unique_id=1711875615]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="bread" type="CharacterBody2D" parent="." unique_id=1449607352]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(137, 56)
+script = ExtResource("5_ryrav")
+
+[node name="Area2D" type="Area2D" parent="bread" unique_id=636288644]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-35, -70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bread/Area2D" unique_id=1195004207]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(974.7031, 14)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="bread" unique_id=1616682921]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(922.99994, -54)
+scale = Vector2(0.46019527, 0.41697657)
+texture = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="bread" unique_id=734993111]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(944.53125, -52.625)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="celling" type="StaticBody2D" parent="." unique_id=760985857]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="celling" unique_id=1808229099]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(6.5, -18.5)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[node name="bomb" type="CharacterBody2D" parent="." unique_id=898152896]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-176, 0)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb" unique_id=689574867]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1401, 435.00003)
+scale = Vector2(0.40599996, 0.38800007)
+texture = ExtResource("9_vef74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb" unique_id=1847604998]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb" unique_id=1647661973]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb/Area2D" unique_id=1764452081]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="deathGUI" type="Button" parent="." unique_id=1917083959]
+visible = false
+modulate = Color(1, 0, 0, 0.8980392)
+self_modulate = Color(1, 0, 0, 1)
+light_mask = 7
+visibility_layer = 7
+offset_right = 1155.0
+offset_bottom = 654.0
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=202161549]
+light_mask = 7
+visibility_layer = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="wall" unique_id=1586218920]
+show_behind_parent = true
+top_level = true
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2897.125, 375.99997)
+scale = Vector2(1.3564583, 1.475)
+texture = ExtResource("10_hve3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1086726538]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(3159, 70.5)
+shape = SubResource("RectangleShape2D_hve3p")
+
+[node name="thorns" type="StaticBody2D" parent="." unique_id=2110107351]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(355, 22)
+script = ExtResource("11_iotsf")
+
+[node name="Thornsotz" type="Sprite2D" parent="thorns" unique_id=9868759]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2412, -766)
+texture = ExtResource("11_mfdv2")
+
+[node name="Thornsotz2" type="Sprite2D" parent="thorns" unique_id=1078800877]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2579, -766)
+texture = ExtResource("11_mfdv2")
+
+[node name="Thornsotz3" type="Sprite2D" parent="thorns" unique_id=212221886]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2740, -764)
+texture = ExtResource("11_mfdv2")
+
+[node name="Thornsotz4" type="Sprite2D" parent="thorns" unique_id=832490565]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2907, -764)
+texture = ExtResource("11_mfdv2")
+
+[node name="Thornsotz5" type="Sprite2D" parent="thorns" unique_id=1165791919]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(3077, -766)
+texture = ExtResource("11_mfdv2")
+
+[node name="Thornsotz6" type="Sprite2D" parent="thorns" unique_id=1691646528]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(3244, -766)
+texture = ExtResource("11_mfdv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thorns" unique_id=589553200]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2833, -787)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Area2DT" type="Area2D" parent="thorns" unique_id=522741748]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2DT" type="CollisionShape2D" parent="thorns/Area2DT" unique_id=1921935915]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2834.5, -782.5)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="Land" type="Sprite2D" parent="." unique_id=2079240376]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-482, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land2" type="Sprite2D" parent="." unique_id=1992435196]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-232, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land3" type="Sprite2D" parent="." unique_id=1194683672]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(21, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land4" type="Sprite2D" parent="." unique_id=253625082]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(272, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land5" type="Sprite2D" parent="." unique_id=1148744376]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(525, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land6" type="Sprite2D" parent="." unique_id=880196701]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(781, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land7" type="Sprite2D" parent="." unique_id=1588119811]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1036, 585)
+texture = ExtResource("13_215e1")
+
+[node name="Land8" type="Sprite2D" parent="." unique_id=1505671639]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1292, 584)
+texture = ExtResource("13_215e1")
+
+[node name="Land9" type="Sprite2D" parent="." unique_id=1156994827]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1545, 585)
+texture = ExtResource("13_215e1")
+
+[node name="Land10" type="Sprite2D" parent="." unique_id=695392771]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1801, 585)
+texture = ExtResource("13_215e1")
+
+[node name="Land11" type="Sprite2D" parent="." unique_id=738952108]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(2056, 585)
+texture = ExtResource("13_215e1")
+
+[node name="tree" type="Sprite2D" parent="." unique_id=1369998305]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-328, 277)
+scale = Vector2(1.55025, 1.9172499)
+texture = ExtResource("14_e8heu")
+
+[node name="SmallGrass" type="Sprite2D" parent="." unique_id=1565228363]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(384.99997, 475)
+scale = Vector2(0.6015625, 0.69140625)
+texture = ExtResource("15_rvswv")
+
+[node name="SmallGrass2" type="Sprite2D" parent="." unique_id=922417022]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(537.625, 477.75)
+scale = Vector2(0.2839449, 0.25655037)
+texture = ExtResource("16_boyg6")
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=615119333]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1897, 472)
+scale = Vector2(1.46875, 1.4960938)
+texture = ExtResource("17_e36ub")
+
+[node name="SmallGrass3" type="Sprite2D" parent="." unique_id=89554739]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(675.25, 481.25)
+scale = Vector2(0.6386719, 0.6347658)
+texture = ExtResource("15_rvswv")
+
+[node name="Bgforforest" type="Sprite2D" parent="." unique_id=455650025]
+show_behind_parent = true
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1957.0001, 403.99997)
+scale = Vector2(29.04, 21.755556)
+texture = ExtResource("18_rvswv")
+
+[node name="island" type="StaticBody2D" parent="." unique_id=1284750233]
+position = Vector2(1264, -610)
+
+[node name="Tree" type="Sprite2D" parent="island" unique_id=1571088700]
+position = Vector2(-42, -287)
+scale = Vector2(1.194, 1.484)
+texture = ExtResource("14_e8heu")
+
+[node name="Island" type="Sprite2D" parent="island" unique_id=1032622247]
+position = Vector2(-17.500067, -51.50005)
+scale = Vector2(1.3019999, 1.4499998)
+texture = ExtResource("6_lc2xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island" unique_id=282141]
+position = Vector2(-1, 51.5)
+shape = SubResource("RectangleShape2D_rvswv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="island" unique_id=1339852519]
+position = Vector2(-32.5, -223)
+shape = SubResource("RectangleShape2D_boyg6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="island" unique_id=1573376832]
+position = Vector2(-28, -483)
+shape = SubResource("CircleShape2D_e36ub")
+
+[node name="bread2" type="CharacterBody2D" parent="." unique_id=290202765]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(426, -733)
+script = ExtResource("5_ryrav")
+
+[node name="Area2D" type="Area2D" parent="bread2" unique_id=254731975]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-35, -70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bread2/Area2D" unique_id=689115487]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(974.7031, 14)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="bread2" unique_id=848099799]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(922.99994, -54)
+scale = Vector2(0.46019527, 0.41697657)
+texture = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="bread2" unique_id=552079998]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(944.53125, -52.625)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="bomb2" type="CharacterBody2D" parent="." unique_id=1904771014]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(-368, -887)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb2" unique_id=1253386129]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1397.9999, 463.00003)
+rotation = 0.47884384
+scale = Vector2(0.5740938, 0.6158748)
+texture = ExtResource("11_mfdv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb2" unique_id=260218178]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb2" unique_id=982208862]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb2/Area2D" unique_id=165986386]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="island2" type="StaticBody2D" parent="." unique_id=784988382]
+
+[node name="Island" type="Sprite2D" parent="island2" unique_id=21834131]
+position = Vector2(2481, -909)
+texture = ExtResource("6_lc2xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island2" unique_id=541852312]
+position = Vector2(2495.5, -813.5)
+shape = SubResource("RectangleShape2D_x5p1p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="island2" unique_id=893876945]
+position = Vector2(2495.5, -813.5)
+shape = SubResource("RectangleShape2D_x5p1p")
+
+[node name="island3" type="StaticBody2D" parent="." unique_id=141279873]
+position = Vector2(-625, -288)
+
+[node name="Island" type="Sprite2D" parent="island3" unique_id=53337281]
+position = Vector2(2481, -909)
+texture = ExtResource("6_lc2xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="island3" unique_id=87439369]
+position = Vector2(2495.5, -813.5)
+shape = SubResource("RectangleShape2D_x5p1p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="island3" unique_id=794975996]
+position = Vector2(2495.5, -813.5)
+shape = SubResource("RectangleShape2D_x5p1p")
+
+[node name="bomb3" type="CharacterBody2D" parent="." unique_id=1643400455]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(951, -1451)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb3" unique_id=282716752]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1405.9999, 456.49997)
+scale = Vector2(0.5703135, 0.6679688)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb3" unique_id=865899348]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb3" unique_id=1520423903]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb3/Area2D" unique_id=779726911]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="bomb4" type="CharacterBody2D" parent="." unique_id=1652327840]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1062, -1451)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb4" unique_id=309128795]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1405.9999, 456.49997)
+scale = Vector2(0.5703135, 0.6679688)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb4" unique_id=1661605261]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb4" unique_id=1508773610]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb4/Area2D" unique_id=2110422625]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="bomb5" type="CharacterBody2D" parent="." unique_id=557519372]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1176, -1451)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb5" unique_id=1560539659]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1405.9999, 456.49997)
+scale = Vector2(0.5703135, 0.6679688)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb5" unique_id=477659532]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb5" unique_id=352567574]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb5/Area2D" unique_id=1805818470]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="bomb6" type="CharacterBody2D" parent="." unique_id=644483857]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(342, -1738)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb6" unique_id=819034141]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1405.9999, 456.49997)
+scale = Vector2(0.5703135, 0.6679688)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb6" unique_id=700658321]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb6" unique_id=1820715127]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb6/Area2D" unique_id=676067311]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="bomb7" type="CharacterBody2D" parent="." unique_id=1107158881]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(453, -1738)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb7" unique_id=809006388]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1405.9999, 456.49997)
+scale = Vector2(0.5703135, 0.6679688)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb7" unique_id=2454581]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb7" unique_id=1194977063]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb7/Area2D" unique_id=885016280]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1406, 454)
+shape = SubResource("CircleShape2D_mfdv2")
+
+[node name="bomb8" type="CharacterBody2D" parent="." unique_id=411423379]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(567, -1738)
+script = ExtResource("10_e36ub")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb8" unique_id=1596971937]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1405.9999, 456.49997)
+scale = Vector2(0.5703135, 0.6679688)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb8" unique_id=370352019]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1408, 456)
+shape = SubResource("CircleShape2D_hve3p")
+
+[node name="Area2D" type="Area2D" parent="bomb8" unique_id=1648542390]
+light_mask = 7
+visibility_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb8/Area2D" unique_id=2108711432]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(1294, 438)
+shape = SubResource("RectangleShape2D_hb5m1")
+
+[node name="SmallGrass4" type="Sprite2D" parent="." unique_id=1303077030]
+position = Vector2(1082.375, 471.75)
+scale = Vector2(0.29128432, 0.28275108)
+texture = ExtResource("16_boyg6")
+
+[node name="newDamageSystemTest" type="StaticBody2D" parent="." unique_id=1259654397]
+script = ExtResource("22_x5p1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="newDamageSystemTest" unique_id=429781038]
+position = Vector2(449, -516)
+texture = ExtResource("21_hb5m1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="newDamageSystemTest" unique_id=298410373]
+position = Vector2(460, -524)
+shape = SubResource("RectangleShape2D_qhcbd")
+
+[node name="Area2D" type="Area2D" parent="newDamageSystemTest" unique_id=1106158327]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="newDamageSystemTest/Area2D" unique_id=2050176563]
+position = Vector2(459.5, -522.75)
+shape = SubResource("RectangleShape2D_f1jbl")
+
+[connection signal="body_entered" from="player/Area2Dplayer" to="player/Camera2D/HP" method="_on_area_2_dplayer_body_entered"]
+[connection signal="body_entered" from="bread/Area2D" to="bread" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="bomb/Area2D" to="player/Camera2D/HP" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="thorns/Area2DT" to="player/Camera2D/HP" method="_on_area_2dt_body_entered"]
+[connection signal="body_entered" from="bread2/Area2D" to="bread2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="newDamageSystemTest/Area2D" to="newDamageSystemTest" method="_on_area_2d_body_entered"]

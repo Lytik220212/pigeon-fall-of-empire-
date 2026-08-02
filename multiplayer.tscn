@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cri1vwfyrndmm"]
+
+[ext_resource type="Script" uid="uid://cv5654agmh3h6" path="res://multiplayer.gd" id="1_wktud"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="2_5bi2t"]
+[ext_resource type="PackedScene" uid="uid://s3fd1gl01uel" path="res://player.tscn" id="2_wuni8"]
+[ext_resource type="Texture2D" uid="uid://d1wmp8xp64d2b" path="res://land.png" id="4_sqe1x"]
+[ext_resource type="Texture2D" uid="uid://0wwat0kjm6go" path="res://tree.png" id="5_fxi6q"]
+[ext_resource type="Texture2D" uid="uid://ystj6rgdlbov" path="res://grass.png" id="6_56a3p"]
+[ext_resource type="Texture2D" uid="uid://d27k30uj40qs0" path="res://grassotz.png" id="7_otwdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa7x"]
+size = Vector2(8672.5, 116.5)
+
+[node name="multiplayer" type="Node2D" unique_id=2120142820]
+script = ExtResource("1_wktud")
+player = ExtResource("2_wuni8")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=352723314]
+_spawnable_scenes = PackedStringArray("uid://s3fd1gl01uel")
+spawn_path = NodePath("../Node2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799870639]
+show_behind_parent = true
+position = Vector2(1074.7023, 553.5289)
+scale = Vector2(10.595555, 5.9422216)
+texture = ExtResource("2_5bi2t")
+
+[node name="Button" type="Button" parent="." unique_id=1416425729]
+offset_right = 223.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 40
+text = "SERVER"
+
+[node name="Button2" type="Button" parent="." unique_id=1728217103]
+offset_left = 3.0
+offset_top = 183.0
+offset_right = 224.0
+offset_bottom = 291.0
+theme_override_font_sizes/font_size = 40
+text = "CLIENT"
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=758270744]
+position = Vector2(-34, 76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=636810944]
+position = Vector2(4342.75, 938.25)
+shape = SubResource("RectangleShape2D_xwa7x")
+
+[node name="floor" type="StaticBody2D" parent="floor" unique_id=1318707086]
+position = Vector2(16621, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor" unique_id=2135350692]
+position = Vector2(4342.75, 938.25)
+shape = SubResource("RectangleShape2D_xwa7x")
+
+[node name="Land3" type="Sprite2D" parent="floor" unique_id=976072679]
+position = Vector2(103, 936)
+texture = ExtResource("4_sqe1x")
+
+[node name="Land2" type="Sprite2D" parent="floor/Land3" unique_id=51647770]
+position = Vector2(254, 0)
+texture = ExtResource("4_sqe1x")
+
+[node name="Land2" type="Sprite2D" parent="floor/Land3/Land2" unique_id=1603900597]
+position = Vector2(254, 0)
+texture = ExtResource("4_sqe1x")
+
+[node name="Tree" type="Sprite2D" parent="floor/Land3/Land2" unique_id=238288346]
+position = Vector2(-463.00006, 2595.0002)
+scale = Vector2(1.67, 1.94)
+texture = ExtResource("5_fxi6q")
+
+[node name="Grass" type="Sprite2D" parent="floor/Land3/Land2" unique_id=972484255]
+position = Vector2(-820, 1729)
+texture = ExtResource("6_56a3p")
+
+[node name="Grassotz" type="Sprite2D" parent="floor/Land3/Land2" unique_id=900109841]
+position = Vector2(-452, 1912)
+texture = ExtResource("7_otwdb")
+
+[node name="Land3" type="Sprite2D" parent="floor/Land3" unique_id=2133495876]
+position = Vector2(755, 11)
+texture = ExtResource("4_sqe1x")
+
+[node name="Land2" type="Sprite2D" parent="floor/Land3/Land3" unique_id=1627566915]
+position = Vector2(254, 0)
+texture = ExtResource("4_sqe1x")
+
+[node name="Land2" type="Sprite2D" parent="floor/Land3/Land3/Land2" unique_id=529416018]
+position = Vector2(254, 0)
+texture = ExtResource("4_sqe1x")
+
+[node name="Tree" type="Sprite2D" parent="floor/Land3/Land3/Land2" unique_id=2079358262]
+position = Vector2(-463.00006, 2595.0002)
+scale = Vector2(1.67, 1.94)
+texture = ExtResource("5_fxi6q")
+
+[node name="Grass" type="Sprite2D" parent="floor/Land3/Land3/Land2" unique_id=302314430]
+position = Vector2(-820, 1729)
+texture = ExtResource("6_56a3p")
+
+[node name="Grassotz" type="Sprite2D" parent="floor/Land3/Land3/Land2" unique_id=1201993829]
+position = Vector2(-452, 1912)
+texture = ExtResource("7_otwdb")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2075631332]
+position = Vector2(144, 731)
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bl4uvb5ufr36f"]
+
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="1_hp32h"]
+[ext_resource type="Texture2D" uid="uid://dn0b14p32w6u0" path="res://Star-Recovered-Recovered-export.png" id="2_ccwvg"]
+[ext_resource type="Script" uid="uid://dmqn6a0hwufv8" path="res://from_history_to_game.gd" id="3_41hca"]
+
+[node name="prehistory" type="Node2D" unique_id=1285020171]
+
+[node name="Bgforforest" type="Sprite2D" parent="." unique_id=2104537855]
+position = Vector2(1188.5156, 633.2489)
+scale = Vector2(12.968888, 8.502222)
+texture = ExtResource("1_hp32h")
+
+[node name="Label" type="Label" parent="." unique_id=1071942170]
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 2007.0
+offset_bottom = 1103.0
+theme_override_font_sizes/font_size = 60
+text = "We are birds, and animals have always humiliated us.
+ We pigeons, who helped humans deliver messages 
+during World War II, are now being eaten by cats
+because they see us as easy prey.
+My brothers and sisters were eaten by cats and dogs.
+ Even such strong birds as falcons are still seen as weak.
+That’s why I decided to kill the lion, to strike a crushing blow
+ against the animals, even though I am just a pigeon."
+
+[node name="StarRecoveredRecoveredExport" type="Sprite2D" parent="." unique_id=842502828]
+position = Vector2(1635.9999, 259.99997)
+rotation = 0.42046633
+texture = ExtResource("2_ccwvg")
+
+[node name="from-history-to-game" type="Button" parent="." unique_id=2033380188]
+offset_left = 676.0
+offset_top = 825.0
+offset_right = 1186.0
+offset_bottom = 999.0
+theme_override_font_sizes/font_size = 120
+text = "PLAY "
+script = ExtResource("3_41hca")
+
+[connection signal="button_down" from="from-history-to-game" to="from-history-to-game" method="_on_button_down"]
