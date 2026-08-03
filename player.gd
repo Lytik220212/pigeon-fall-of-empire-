@@ -5,6 +5,7 @@ class_name player
 var speed = 301
 var coins = 0
 var can_walljump = true
+var pressing_right = false
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(int(name))
@@ -24,7 +25,11 @@ func _physics_process(delta: float) -> void:
 		if(Input.is_action_pressed("left") and !is_on_floor):
 			print("hi")
 			$Sprite2D.texture = load("res://pigeon-jump.png")
-		if(Input.is_action_pressed("right") and !is_on_floor):
+		if(Input.is_action_just_pressed("left")):
+			pressing_right = true
+		else:
+			pressing_right = false
+		if(pressing_right == true and !is_on_floor):
 			print("hi2")
 			$Sprite2D.texture = load("res://pigeon-jumpotz.png")
 		var direction = Input.get_axis("left","right")
