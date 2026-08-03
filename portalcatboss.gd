@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is player:
+		Global.current_lvl = 5
 		get_tree().change_scene_to_file("res://pre_alpha_congr.tscn")
