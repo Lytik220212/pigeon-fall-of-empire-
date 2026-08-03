@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bdewnv6kaixwa"]
 
-[ext_resource type="Script" uid="uid://dwpmt0lb1dj0i" path="res://portal.gd" id="1_ef3v5"]
+[ext_resource type="Script" uid="uid://bksa5jdqw6y6r" path="res://portalcatboss.gd" id="1_ef3v5"]
 [ext_resource type="Texture2D" uid="uid://bdqoy5htomlsg" path="res://portal.png" id="2_grrij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omq17"]
 size = Vector2(464, 462)
 
-[node name="portal" type="StaticBody2D" unique_id=445934731]
+[node name="portalcatBoss" type="StaticBody2D" unique_id=445934731]
 position = Vector2(3, -249)
 script = ExtResource("1_ef3v5")
 

@@ -165,8 +165,8 @@ script = ExtResource("1_q6x6p")
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=334029971]
 light_mask = 7
 visibility_layer = 7
-position = Vector2(177.125, 399.60938)
-scale = Vector2(0.47950003, 0.6184375)
+position = Vector2(177, 438)
+scale = Vector2(0.35, 0.451)
 texture = ExtResource("2_bum67")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1586893218]

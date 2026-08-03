@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://deftvtb4x004g" path="res://settings.gd" id="1_x2hje"]
 [ext_resource type="Script" uid="uid://24f0qkaj2bv1" path="res://from_setting_to_menu.gd" id="2_nkug2"]
 [ext_resource type="Script" uid="uid://dehhhg1ucmqry" path="res://delete_saves_btn.gd" id="3_3ykye"]
+[ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="4_gc0em"]
 
 [node name="settings" type="Node2D" unique_id=1040178673]
 script = ExtResource("1_x2hje")
@@ -41,6 +42,12 @@ theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 200
 text = "DELETE SAVES"
 script = ExtResource("3_3ykye")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1978882054]
+show_behind_parent = true
+position = Vector2(960.2134, 538.5956)
+scale = Vector2(9.573334, 5.808889)
+texture = ExtResource("4_gc0em")
 
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="toggled" from="CheckBox2" to="." method="_on_check_box_2_toggled"]
