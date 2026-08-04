@@ -18,7 +18,7 @@ var speedrun = false
 var best_lap = 999.0
 var spawn_player = false
 var config
-var path = "user://save_final_pre_alpha_bug_fix2.cfg"
+var path = "user://save_final_pre_alpha2bosscat.cfg"
 var section_name = "game"
 
 func _process(delta: float) -> void:

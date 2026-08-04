@@ -7,7 +7,7 @@
 size = Vector2(464, 462)
 
 [node name="portalcatBoss" type="StaticBody2D" unique_id=445934731]
-position = Vector2(3, -249)
+position = Vector2(253, -251)
 script = ExtResource("1_ef3v5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2108936097]

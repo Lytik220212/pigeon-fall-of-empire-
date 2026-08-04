@@ -34,6 +34,8 @@
 [ext_resource type="Script" uid="uid://dodley0vrelnj" path="res://cat_2.gd" id="34_shkdl"]
 [ext_resource type="Script" uid="uid://7uhc0a6287cb" path="res://catborders.gd" id="36_f08fm"]
 [ext_resource type="Script" uid="uid://bv2ma7xmwvn44" path="res://lava.gd" id="37_f08fm"]
+[ext_resource type="AudioStream" uid="uid://ce178nd7q6v6" path="res://Medieval-Lute-preview.mp3" id="38_iia3h"]
+[ext_resource type="Script" uid="uid://7n7rkex6o064" path="res://audio_stream_player_2d.gd" id="39_57trv"]
 [ext_resource type="Script" uid="uid://dqn08pf7mphps" path="res://bread_2.gd" id="39_iia3h"]
 [ext_resource type="Script" uid="uid://wt404ybb4e1e" path="res://advice.gd" id="40_57trv"]
 [ext_resource type="Script" uid="uid://dwpmt0lb1dj0i" path="res://portal.gd" id="40_gpbjy"]
@@ -1248,6 +1250,10 @@ rotation = -3.1400638
 scale = Vector2(2.1598716, 2.0297427)
 texture = ExtResource("11_ru2ak")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=222166809]
+stream = ExtResource("38_iia3h")
+script = ExtResource("39_57trv")
+
 [connection signal="body_entered" from="rounded-thornes/Area2D" to="rounded-thornes" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="thornes2lvl/Area2DThornes2lvl" to="thornes2lvl" method="_on_area_2d_thornes_2_lvl_body_entered"]
 [connection signal="body_entered" from="thornes2lvl2/Area2DThornes2lvl" to="thornes2lvl2" method="_on_area_2d_thornes_2_lvl_body_entered"]
@@ -1272,3 +1278,4 @@ texture = ExtResource("11_ru2ak")
 [connection signal="body_entered" from="big_thornes4/Area2D" to="big_thornes4" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="big_thornes2/Area2D" to="big_thornes2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="big_thornes5/Area2D" to="big_thornes5" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

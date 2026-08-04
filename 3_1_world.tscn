@@ -39,8 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://dhdxscw7rr3gt" path="res://thornsotz.png" id="42_3cb3m"]
 [ext_resource type="Script" uid="uid://gi54gpuw4xya" path="res://lift_14.gd" id="43_72jbv"]
 [ext_resource type="Script" uid="uid://cc61m7e7jopom" path="res://castle.gd" id="43_wo1hx"]
+[ext_resource type="AudioStream" uid="uid://ce178nd7q6v6" path="res://Medieval-Lute-preview.mp3" id="44_72jbv"]
 [ext_resource type="Script" uid="uid://bqxgqv18mgyyh" path="res://lift_15.gd" id="45_72jbv"]
 [ext_resource type="Script" uid="uid://bguqqa4vkqe8a" path="res://lift_borders_2.gd" id="45_i55v6"]
+[ext_resource type="Script" uid="uid://7n7rkex6o064" path="res://audio_stream_player_2d.gd" id="45_txo4c"]
 [ext_resource type="Script" uid="uid://cqjmu06dd7wdr" path="res://lift_5.gd" id="47_5j0ky"]
 [ext_resource type="Script" uid="uid://57d5v38njaqt" path="res://liftborders_3.gd" id="48_cwe4j"]
 
@@ -1728,6 +1730,10 @@ shape = SubResource("RectangleShape2D_sq52s")
 position = Vector2(-187, 637)
 texture = ExtResource("2_8dgpl")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1992234360]
+stream = ExtResource("44_72jbv")
+script = ExtResource("45_txo4c")
+
 [connection signal="body_entered" from="cat2/Area2D" to="cat2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="catborders/catbrd1" to="catborders" method="_on_catbrd_1_body_entered"]
 [connection signal="body_entered" from="catborders/catbrd2" to="catborders" method="_on_catbrd_2_body_entered"]
@@ -1765,3 +1771,4 @@ texture = ExtResource("2_8dgpl")
 [connection signal="body_entered" from="liftborders2/Area2D2lift" to="liftborders2" method="_on_area_2d_2_lift_body_entered"]
 [connection signal="body_entered" from="island2/CollisionShape2D/big_thornes/Area2D" to="island2/CollisionShape2D/big_thornes" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="bread3/Area2D" to="bread3" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

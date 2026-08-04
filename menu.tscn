@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://nqrntydxt6nk" path="res://button_1.gd" id="2_h1wq0"]
 [ext_resource type="Texture2D" uid="uid://j7e0ag3berf8" path="res://bgforforest.png" id="2_oil5j"]
 [ext_resource type="Script" uid="uid://ca2v32075yut" path="res://button_2.gd" id="3_ytr4m"]
-[ext_resource type="Texture2D" uid="uid://dudh341w8udop" path="res://bird.png" id="4_4hy44"]
 [ext_resource type="Script" uid="uid://bkqak53opfej7" path="res://global.gd" id="5_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://cah6jhyr3l1ri" path="res://lytik.jpg" id="8_iqepy"]
 [ext_resource type="Texture2D" uid="uid://7cew7mgalxpo" path="res://thorns.png" id="9_nrnbx"]
@@ -16,11 +15,16 @@
 [ext_resource type="Script" uid="uid://bo77ddu6fnuxp" path="res://speedrun_going.gd" id="15_gd0jp"]
 [ext_resource type="Script" uid="uid://bu0x3nwnu7e3j" path="res://client.gd" id="15_oxnod"]
 [ext_resource type="Script" uid="uid://cy1b6whk04qgy" path="res://best_lap.gd" id="16_gd0jp"]
+[ext_resource type="Script" uid="uid://d1tgnmp7ac6v3" path="res://link_button_itch.gd" id="19_k5x1w"]
 [ext_resource type="Script" uid="uid://c3jnqmd5j3vsk" path="res://link_button.gd" id="19_w25hu"]
 [ext_resource type="Texture2D" uid="uid://cqmo34w0sd77n" path="res://telegram.png" id="20_td6mg"]
+[ext_resource type="Script" uid="uid://cpmt75et3eyro" path="res://license_btn.gd" id="21_guify"]
 [ext_resource type="Script" uid="uid://cxwvghauf70xw" path="res://lan_multiplayer_button.gd" id="21_td6mg"]
 [ext_resource type="Texture2D" uid="uid://b8bpdkej6nrhe" path="res://itch.png" id="22_guify"]
+[ext_resource type="Script" uid="uid://b0fad8wcj6uct" path="res://license.gd" id="22_oil5j"]
+[ext_resource type="Script" uid="uid://embtmpphmpfn" path="res://link_button_4.gd" id="23_8uog0"]
 [ext_resource type="Script" uid="uid://qesepdhuakan" path="res://settings_button.gd" id="23_oil5j"]
+[ext_resource type="Texture2D" uid="uid://dxq2yh14qecfk" path="res://github.png" id="24_k5x1w"]
 
 [node name="Node2D" type="Node2D" unique_id=948157498]
 script = ExtResource("1_3ls4m")
@@ -29,13 +33,6 @@ script = ExtResource("1_3ls4m")
 position = Vector2(526.09344, 290.20453)
 scale = Vector2(10.8133335, 6.5911107)
 texture = ExtResource("2_oil5j")
-
-[node name="Bird2" type="Sprite2D" parent="Sprite2D" unique_id=300029256]
-position = Vector2(-388.27765, -216.03006)
-rotation = 0.5209466
-scale = Vector2(0.576443, 0.57452387)
-skew = 0.0055402517
-texture = ExtResource("4_4hy44")
 
 [node name="global" type="Node2D" parent="Sprite2D" unique_id=451422653]
 position = Vector2(-552.41974, -315.22266)
@@ -196,7 +193,7 @@ offset_top = 386.0
 offset_right = -146.0
 offset_bottom = 551.0
 uri = "https://t.me/pigeonfallofempire"
-script = ExtResource("19_w25hu")
+script = ExtResource("19_k5x1w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="LinkButton2" unique_id=206794185]
 position = Vector2(80.00002, 82.999985)
@@ -212,6 +209,108 @@ theme_override_font_sizes/font_size = 90
 text = "SETTINGS"
 script = ExtResource("23_oil5j")
 
+[node name="Label" type="Label" parent="." unique_id=1684252933]
+offset_left = 1168.0
+offset_top = 668.0
+offset_right = 1517.0
+offset_bottom = 851.0
+theme_override_font_sizes/font_size = 20
+text = "OWNER - LYTIK 
+SCRIPTS - LYTIK 
+SPRITES - LYTIK 
+MARKETING - LYTIK 
+MUSIC - DOWNLOADED FROM SITES 
+!!I DIDN'T USE AI FOR GAMEDEV !!"
+
+[node name="licenseBTN" type="Button" parent="." unique_id=395470386]
+offset_left = -345.0
+offset_top = 802.0
+offset_right = -55.0
+offset_bottom = 856.0
+text = "LICENSE : Lytik Game Source License
+*press me *"
+flat = true
+script = ExtResource("21_guify")
+
+[node name="license" type="Node2D" parent="." unique_id=1125643771]
+visible = false
+script = ExtResource("22_oil5j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="license" unique_id=1727476197]
+position = Vector2(814.9733, 517.1689)
+scale = Vector2(11.053332, 6.662222)
+texture = ExtResource("2_oil5j")
+
+[node name="Label" type="Label" parent="license" unique_id=20316881]
+offset_left = -305.0
+offset_top = -161.0
+offset_right = 1074.0
+offset_bottom = 720.0
+theme_override_font_sizes/font_size = 13
+text = "# Lytik Game Source License
+
+## Ownership
+
+The original game, its assets, brand, and all associated rights remain the exclusive property of Lytik.
+
+This license does not transfer ownership of the game or any intellectual property rights to anyone else.
+
+## Source Code Usage
+
+The source code of the game is publicly available and may be used, modified, and studied for the purpose of creating modifications (mods), improvements, and derivative projects.
+
+Any project that uses or is based on this source code must clearly state that it was created using the original source code provided by Lytik.
+
+## Required Credits
+
+Any modified version, mod, or project based on this source code must include:
+
+* Credit to Lytik as the original author.
+* A link to the official itch.io page.
+* A link to the official Telegram channel.
+* A link to the official lytik's GitHub.
+* A notice stating that the project is based on Lytik's original source code.
+
+These credits must be visible inside the game, preferably in the main menu, credits section, or another clearly accessible location.
+
+## Modifications
+
+You are allowed to modify the source code and create mods or derivative versions.
+
+However, modifications do not make you the owner of the original game or its intellectual property.
+
+The original ownership and authorship remain with Lytik.
+"
+
+[node name="Button" type="Button" parent="license" unique_id=1191599252]
+offset_left = -301.0
+offset_top = 607.0
+offset_right = -231.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 30
+text = "EXIT"
+flat = true
+
+[node name="Label2" type="Label" parent="license" unique_id=2088145071]
+offset_left = -304.0
+offset_top = 567.0
+offset_right = 389.0
+offset_bottom = 590.0
+text = "This license was translated with the help of AI, but the game itself was NOT made using AI"
+
+[node name="LinkButton3" type="LinkButton" parent="." unique_id=1912013051]
+offset_left = -291.0
+offset_top = 231.0
+offset_right = -137.0
+offset_bottom = 377.0
+uri = "https://github.com/Lytik220212/pigeon-fall-of-empire-"
+script = ExtResource("23_8uog0")
+
+[node name="Github" type="Sprite2D" parent="LinkButton3" unique_id=1508080453]
+position = Vector2(83.99997, 73)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("24_k5x1w")
+
 [connection signal="button_down" from="Sprite2D/Button4" to="Sprite2D/Button4" method="_on_button_down"]
 [connection signal="button_down" from="Button1" to="Button1" method="_on_button_down"]
 [connection signal="button_down" from="Button2" to="Button2" method="_on_button_down"]
@@ -222,3 +321,6 @@ script = ExtResource("23_oil5j")
 [connection signal="button_down" from="lan_multiplayer_button" to="lan_multiplayer_button" method="_on_button_down"]
 [connection signal="button_down" from="LinkButton2" to="LinkButton2" method="_on_button_down"]
 [connection signal="button_down" from="SETTINGS_BUTTON" to="SETTINGS_BUTTON" method="_on_button_down"]
+[connection signal="button_down" from="licenseBTN" to="licenseBTN" method="_on_button_down"]
+[connection signal="button_down" from="license/Button" to="license" method="_on_button_button_down"]
+[connection signal="button_down" from="LinkButton3" to="LinkButton3" method="_on_button_down"]

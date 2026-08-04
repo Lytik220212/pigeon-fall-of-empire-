@@ -12,4 +12,5 @@ func _on_button_down() -> void:
 		Global.hp = 3
 		get_tree().change_scene_to_file("res://3_1_world.tscn")
 	if(Global.current_lvl == 4):
+		Global.hp = 3
 		get_tree().change_scene_to_file("res://4_1world.tscn")
