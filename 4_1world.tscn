@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://d4mlodirejyve" path="res://bossHPbar.png" id="10_mpeks"]
 [ext_resource type="Texture2D" uid="uid://b4g5e74a3tynd" path="res://bossHP.png" id="11_658f6"]
 [ext_resource type="Texture2D" uid="uid://djbvhlu10nta1" path="res://BOSSCATBG.jpg" id="12_mpeks"]
-[ext_resource type="AudioStream" uid="uid://cwss3l6k4jku7" path="res://kulakovka-battle-epic-274997.mp3" id="13_658f6"]
 [ext_resource type="Script" uid="uid://bk53chwbanluh" path="res://bossCATMUSIC.gd" id="14_1nk0h"]
+[ext_resource type="AudioStream" uid="uid://b3y1q6oxvj013" path="res://music/boss.mp3" id="14_cfyfw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_maw8n"]
 radius = 117.01709
@@ -212,7 +212,7 @@ scale = Vector2(1.4968749, 1.1364583)
 texture = ExtResource("12_mpeks")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=804719954]
-stream = ExtResource("13_658f6")
+stream = ExtResource("14_cfyfw")
 autoplay = true
 script = ExtResource("14_1nk0h")
 

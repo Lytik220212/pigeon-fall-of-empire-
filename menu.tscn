@@ -25,6 +25,14 @@
 [ext_resource type="Script" uid="uid://embtmpphmpfn" path="res://link_button_4.gd" id="23_8uog0"]
 [ext_resource type="Script" uid="uid://qesepdhuakan" path="res://settings_button.gd" id="23_oil5j"]
 [ext_resource type="Texture2D" uid="uid://dxq2yh14qecfk" path="res://github.png" id="24_k5x1w"]
+[ext_resource type="AudioStream" uid="uid://bf8mr1ia3twu7" path="res://music/menu.mp3" id="26_7wriu"]
+[ext_resource type="Script" uid="uid://bk53chwbanluh" path="res://bossCATMUSIC.gd" id="27_xhgcl"]
+[ext_resource type="Script" uid="uid://g38ogmf1keno" path="res://scoreboard.gd" id="28_xhgcl"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xhgcl"]
+properties/0/path = NodePath("scoreboard:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Node2D" type="Node2D" unique_id=948157498]
 script = ExtResource("1_3ls4m")
@@ -179,10 +187,10 @@ scale = Vector2(0.67578125, 0.68359375)
 texture = ExtResource("20_td6mg")
 
 [node name="lan_multiplayer_button" type="Button" parent="." unique_id=656910704]
-offset_left = -989.0
-offset_top = 630.0
-offset_right = -435.0
-offset_bottom = 762.0
+offset_left = 979.0
+offset_top = -209.0
+offset_right = 1533.0
+offset_bottom = -77.0
 theme_override_font_sizes/font_size = 50
 text = "LAN MULTIPLAYER"
 script = ExtResource("21_td6mg")
@@ -217,9 +225,8 @@ offset_bottom = 851.0
 theme_override_font_sizes/font_size = 20
 text = "OWNER - LYTIK 
 SCRIPTS - LYTIK 
-SPRITES - LYTIK 
 MARKETING - LYTIK 
-MUSIC - DOWNLOADED FROM SITES 
+MUSIC - LYTIK
 !!I DIDN'T USE AI FOR GAMEDEV !!"
 
 [node name="licenseBTN" type="Button" parent="." unique_id=395470386]
@@ -299,9 +306,9 @@ offset_bottom = 590.0
 text = "This license was translated with the help of AI, but the game itself was NOT made using AI"
 
 [node name="LinkButton3" type="LinkButton" parent="." unique_id=1912013051]
-offset_left = -291.0
+offset_left = -304.0
 offset_top = 231.0
-offset_right = -137.0
+offset_right = -150.0
 offset_bottom = 377.0
 uri = "https://github.com/Lytik220212/pigeon-fall-of-empire-"
 script = ExtResource("23_8uog0")
@@ -310,6 +317,22 @@ script = ExtResource("23_8uog0")
 position = Vector2(83.99997, 73)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("24_k5x1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1234652503]
+stream = ExtResource("26_7wriu")
+autoplay = true
+script = ExtResource("27_xhgcl")
+
+[node name="scoreboard" type="Label" parent="." unique_id=1231471951]
+offset_left = 1198.0
+offset_top = 57.0
+offset_right = 1238.0
+offset_bottom = 80.0
+script = ExtResource("28_xhgcl")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2093110487]
+root_path = NodePath("../scoreboard")
+replication_config = SubResource("SceneReplicationConfig_xhgcl")
 
 [connection signal="button_down" from="Sprite2D/Button4" to="Sprite2D/Button4" method="_on_button_down"]
 [connection signal="button_down" from="Button1" to="Button1" method="_on_button_down"]
@@ -324,3 +347,4 @@ texture = ExtResource("24_k5x1w")
 [connection signal="button_down" from="licenseBTN" to="licenseBTN" method="_on_button_down"]
 [connection signal="button_down" from="license/Button" to="license" method="_on_button_button_down"]
 [connection signal="button_down" from="LinkButton3" to="LinkButton3" method="_on_button_down"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
